@@ -75,5 +75,13 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 6.0.0'
+  gem "rubocop-rspec"
+  gem "rubocop-capybara"
+  gem 'warden-rspec-rails'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem "webdrivers"
+  gem 'faker'
   gem 'rubocop-rails', require: false
 end
