@@ -13,10 +13,14 @@ RSpec.describe UserFlashcard, type: :model do
     end
   end
 
-  context 'validations and associations' do
+  context 'associations' do
     it { is_expected.to belong_to(:category).class_name("Category") }
     it { is_expected.to belong_to(:user).class_name("User") }
     it { is_expected.to belong_to(:flashcard).class_name("Flashcard") }
+  end
 
+  context 'validations' do
+    it { is_expected.to validate_inclusion_of(:success).in_array([true, false]) }
+    it { is_expected.to validate_inclusion_of(:failed).in_array([true, false]) }
   end
 end
