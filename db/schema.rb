@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_084353) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calls", force: :cascade do |t|
+    t.integer "duration"
+    t.bigint "caller_id", null: false
+    t.bigint "random_user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["caller_id"], name: "index_calls_on_caller_id"
+    t.index ["random_user_id"], name: "index_calls_on_random_user_id"
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -27,6 +37,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_084353) do
     t.boolean "default"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.bigint "user_1_id", null: false
+    t.bigint "user_2_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_1_id"], name: "index_friends_on_user_1_id"
+    t.index ["user_2_id"], name: "index_friends_on_user_2_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "friend_id", null: false
+    t.index ["friend_id"], name: "index_messages_on_friend_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "reviewer_id"
+    t.bigint "reviewee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["reviewee_id"], name: "index_reviews_on_reviewee_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
   create_table "user_flashcards", force: :cascade do |t|
@@ -56,6 +93,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_084353) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "calls", "users", column: "caller_id"
+  add_foreign_key "calls", "users", column: "random_user_id"
+  add_foreign_key "friends", "users", column: "user_1_id"
+  add_foreign_key "friends", "users", column: "user_2_id"
+  add_foreign_key "messages", "friends"
+  add_foreign_key "reviews", "users", column: "reviewee_id"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "user_flashcards", "categories"
   add_foreign_key "user_flashcards", "flashcards"
   add_foreign_key "user_flashcards", "users"
