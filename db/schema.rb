@@ -68,7 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_184050) do
 
   create_table "user_flashcards", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "flashcard_id", null: false
+    t.bigint "translation_id", null: false
     t.bigint "category_id", null: false
     t.boolean "success"
     t.boolean "failed"

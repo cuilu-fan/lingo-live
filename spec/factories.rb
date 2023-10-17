@@ -16,7 +16,7 @@ FactoryBot.define do
     text { Faker::Lorem.sentence }
   end
 
-  factory :flashcard do
+  factory :translation do
     primary_language_word { "Apfel" }
     target_language_word { "Apple" }
     default { false }

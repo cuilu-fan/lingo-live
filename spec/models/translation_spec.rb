@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Flashcard, type: :model do
+RSpec.describe Translation, type: :model do
   context 'with DB columns' do
     {
       primary_language_word: :string,
