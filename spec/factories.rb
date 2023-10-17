@@ -8,3 +8,18 @@ FactoryBot.define do
     password { "123456" }
   end
 end
+
+FactoryBot.define do
+  factory :flashcard do
+    primary_language_word { "Apfel" }
+    target_language_word { "Apple" }
+    default { false }
+  end
+end
+
+FactoryBot.define do
+  factory :category do
+    name { "Fruits" }
+    default { false }
+  end
+end
