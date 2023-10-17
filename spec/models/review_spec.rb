@@ -11,9 +11,9 @@ RSpec.describe Review, type: :model do
     end
   end
   context 'associations' do
-    [
-      :reviewer,
-      :reviewee
+    %i[
+      reviewer
+      reviewee
     ].each do |attribute|
       it { is_expected.to belong_to(attribute).class_name('User') }
     end

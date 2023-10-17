@@ -10,9 +10,9 @@ RSpec.describe Friend, type: :model do
     end
   end
   context 'associations' do
-    [
-      :user_1,
-      :user_2
+    %i[
+      user_1
+      user_2
     ].each do |attribute|
       it { is_expected.to belong_to(attribute).class_name('User') }
     end
