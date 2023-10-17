@@ -30,11 +30,9 @@ FactoryBot.define do
     name { "Fruits" }
     default { false }
   end
-end
 
-FactoryBot.define do
   factory :user_flashcard do
-    success { false }
-    failed { true }
+    success { true }
+    failed { false }
   end
 end

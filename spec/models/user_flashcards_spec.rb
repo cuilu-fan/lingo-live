@@ -14,6 +14,9 @@ RSpec.describe UserFlashcard, type: :model do
   end
 
   context 'validations and associations' do
-    it { is_expected.to }
+    it { is_expected.to belong_to(:category).class_name("Category") }
+    it { is_expected.to belong_to(:user).class_name("User") }
+    it { is_expected.to belong_to(:flashcard).class_name("Flashcard") }
+
   end
 end
