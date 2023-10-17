@@ -14,6 +14,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.boolean "default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "flashcards", force: :cascade do |t|
+    t.string "primary_language_word"
+    t.string "target_language_word"
+    t.boolean "default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friends", force: :cascade do |t|
     t.bigint "user_1_id", null: false
     t.bigint "user_2_id", null: false
