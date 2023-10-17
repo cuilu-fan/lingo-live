@@ -8,3 +8,9 @@ FactoryBot.define do
     password { "123456" }
   end
 end
+
+FactoryBot.define do
+  factory :call do
+    duration { 20 }
+  end
+end
