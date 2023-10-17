@@ -8,3 +8,15 @@ FactoryBot.define do
     password { "123456" }
   end
 end
+
+FactoryBot.define do
+  factory :message do
+    text { Faker::Lorem.sentence }
+  end
+end
+
+FactoryBot.define do
+  factory :review do
+    rating { Faker::Number.between(from: 1, to: 5) }
+  end
+end

@@ -1,13 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Review, type: :model do
-  # Test the columns in the db
-  it { should have_db_column(:id) }
-  it { should have_db_column(:rating) }
-  it { should have_db_column(:reviewer_id) }
-  it { should have_db_column(:reviewee_id) }
-
-  # Test the validations and relations
-  it { should belong_to(:reviewer) }
-  it { should belong_to(:reviewee) }
+  context 'with DB columns' do
+    {
+      rating: :integer,
+      reviewer_id: :integer,
+      reviewee_id: :integer
+    }.each do |attribute, type|
+      it { is_expected.to have_db_column(attribute).of_type type }
+    end
+  end
+  context 'associations' do
+    [
+      :reviewer,
+      :reviewee
+    ].each do |attribute|
+      it { is_expected.to belong_to(attribute).class_name('User') }
+    end
+  end
 end
