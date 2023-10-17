@@ -9,6 +9,5 @@ class CreateUserFlashcards < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    rename_column :user_flashcards, :flashcard_id, :translation_id
   end
 end
