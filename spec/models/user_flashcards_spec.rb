@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UserFlashcards, type: :model do
+RSpec.describe UserFlashcard, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
   context 'with DB columns' do
     {
