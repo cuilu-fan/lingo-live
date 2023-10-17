@@ -10,6 +10,10 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
+  factory :message do
+    text { Faker::Lorem.sentence }
+  end
+
   factory :flashcard do
     primary_language_word { "Apfel" }
     target_language_word { "Apple" }
@@ -18,6 +22,10 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
+  factory :review do
+    rating { Faker::Number.between(from: 1, to: 5) }
+  end
+
   factory :category do
     name { "Fruits" }
     default { false }
