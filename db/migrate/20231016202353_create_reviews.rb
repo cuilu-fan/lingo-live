@@ -2,8 +2,8 @@ class CreateReviews < ActiveRecord::Migration[7.0]
   def change
     create_table :reviews do |t|
       t.integer :rating
-      t.integer :reviewer_id
-      t.integer :reviewee_id
+      t.references :reviewer, foreign_key: { to_table: :users }
+      t.references :reviewee, foreign_key: { to_table: :users }
 
       t.timestamps
     end
