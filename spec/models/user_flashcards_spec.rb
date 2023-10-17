@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe UserFlashcard, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
   context 'with DB columns' do
     {
       user_id: :integer,
@@ -13,5 +12,8 @@ RSpec.describe UserFlashcard, type: :model do
       it { is_expected.to have_db_column(attribute).of_type type }
     end
   end
-end
 
+  context 'validations and associations' do
+    it { is_expected.to }
+  end
+end

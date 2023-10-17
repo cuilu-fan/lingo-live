@@ -23,3 +23,10 @@ FactoryBot.define do
     default { false }
   end
 end
+
+FactoryBot.define do
+  factory :user_flashcard do
+    success { false }
+    failed { true }
+  end
+end
