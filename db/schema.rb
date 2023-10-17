@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_17_184050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,14 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-    t.boolean "default"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "flashcards", force: :cascade do |t|
-    t.string "primary_language_word"
-    t.string "target_language_word"
     t.boolean "default"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,6 +58,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
     t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
+  create_table "translations", force: :cascade do |t|
+    t.string "primary_language_word"
+    t.string "target_language_word"
+    t.boolean "default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_flashcards", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "flashcard_id", null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_user_flashcards_on_category_id"
-    t.index ["flashcard_id"], name: "index_user_flashcards_on_flashcard_id"
+    t.index ["translation_id"], name: "index_user_flashcards_on_translation_id"
     t.index ["user_id"], name: "index_user_flashcards_on_user_id"
   end
 
@@ -101,6 +101,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_102106) do
   add_foreign_key "reviews", "users", column: "reviewee_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "user_flashcards", "categories"
-  add_foreign_key "user_flashcards", "flashcards"
+  add_foreign_key "user_flashcards", "translations", column: "translation_id"
   add_foreign_key "user_flashcards", "users"
 end
