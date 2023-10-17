@@ -15,6 +15,6 @@ RSpec.describe Flashcard, type: :model do
     it { is_expected.to validate_presence_of(:primary_language_word) }
     it { is_expected.to validate_presence_of(:target_language_word) }
     it { is_expected.to validate_inclusion_of(:default).in_array([true, false]) }
-    #What happend with default: and in that case what is default
+    # What happend with default: and in that case what is default
   end
 end
