@@ -1,6 +1,6 @@
 <h1><%= "hello annie"%></h1>
 <ul>
 <% @translations.each do |translation| %>
-  <li>translation</li>
-</ul>
+  <li><%= translation.primary_language_word %></li>
 <% end %>
+</ul>
