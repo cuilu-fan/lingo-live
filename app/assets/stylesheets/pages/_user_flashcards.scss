@@ -1,0 +1,30 @@
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+#search-box {
+  background-color: red;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#suggestions {
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: none;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 298px;
+}
+#suggestions li {
+  padding: 10px;
+  cursor: pointer;
+}
+#suggestions li:hover {
+  background-color: #F1F1F1;
+}
