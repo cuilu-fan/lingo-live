@@ -1,0 +1,27 @@
+<section>
+  <div class="container">
+    <div class="sub_container">
+      <div class="flashcard_word">
+        <p>Type your word here:</p>
+        <input type="text" name="word" id="word" placeholder="Your word">
+      </div>
+
+      <div class="translated-word">
+        <h5>Chaire</h5>
+      </div>
+
+      </div>
+
+    <div class="autocomplete" >
+        <p>Categories:</p>
+        <input type="text" id="search-box" placeholder="Search..."   data-target= "searchBox">
+        <ul id="suggestions" data-target="suggestions">
+
+        </ul>
+    </div>
+
+    <button type= "submit" class="confirm_btn" >Confirm</button>
+
+    <%= image_tag "background_pic1.png", class: "flash_background", alt: "flashcard background" %>
+  </div>
+</section>

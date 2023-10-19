@@ -10,3 +10,11 @@ Translation.create(primary_language_word: "tisch", target_language_word: "table"
 Translation.create(primary_language_word: "apfel", target_language_word: "apple", default: false)
 Translation.create(primary_language_word: "schüssel", target_language_word: "key", default: false)
 Translation.create(primary_language_word: "hund", target_language_word: "dog", default: false)
+
+Category.destroy_all
+Category.create(name: "Furniture")
+Category.create(name: "Food")
+Category.create(name: "Animals")
+Category.create(name: "Household")
+
+User.create(first_name: "james", last_name:"smith", email: "james@gmail.com", password: "12345678")
