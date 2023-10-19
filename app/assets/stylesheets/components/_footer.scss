@@ -1,0 +1,36 @@
+footer{
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color:aquamarine;
+  height: 80px;
+  // position: sticky;
+}
+
+.photo-link{
+  align-items: center;
+  height: 100%;
+}
+
+.icon-photo{
+  height: 60%;
+  background-image: asset-url("footer_icons/flash-cards-bold.png");
+  background-origin: content-box;
+  width: 40px;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.footer-text{
+  display: flex;
+  justify-content: center;
+}
+
+.nav-icon{
+  // flex-direction: column;
+  // justify-content: center;
+  // width: 25%;
+  // height: 20px;
+  height: 100%;
+}
