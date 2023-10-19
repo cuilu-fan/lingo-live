@@ -1,6 +1,25 @@
-<h1><%= "hello annie"%></h1>
-<ul>
-<% @translations.each do |translation| %>
-  <li><%= translation.primary_language_word %></li>
-<% end %>
-</ul>
+<section>
+  <h1 class="home-title">Hi Annie!!</h1>
+  <div class="home-wrapper">
+    <div class="flashcards-container">
+      <div class="flashcard-grid" data-controller="flip-card">
+        <% @translations.each_with_index do |translation, index| %>
+          <div class="flashcard-container">
+            <div class="flashcard" data-flip-card-target="flip" data-action="click->flip-card#flipCard" data-id="<%= index %>">
+              <div class="flashcard-front">
+                <%= translation.primary_language_word %>
+              </div>
+              <div class="flashcard-back">
+                <%= translation.target_language_word %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="btn-img-container" data-controller="create-hover">
+      <button type="submit" class="home-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor">Create Flashcard</button>
+      <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
+    </div>
+  </div>
+</section>
