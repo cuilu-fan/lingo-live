@@ -1,23 +1,26 @@
 <div class="nav-icon">
-  <%# <%= link_to "#", class: "photo-link" do %>
+  <%= link_to "#" do %>
+    <div class="photo-link">
+        <div class="flashcard-photo"></div>
+        <a class="footer-text">create</a>
+    </div>
+  <% end %>
+</div>
+
+<div class="nav-icon">
   <div class="photo-link">
-    <div class="icon-photo"></div>
-    <%# <%= image_tag "footer_icons/flash-cards-bold.png" %>
-    <p class="footer-text">create</p>
+    <%= link_to "categories#show" do %>
+      <div class="review-photo"></div>
+      <a class="footer-text">review</a>
+    <% end %>
   </div>
-
 </div>
 
 <div class="nav-icon">
-  <%= link_to "categories#show", class: "photo-link" do %>
-    <%# <%= image_tag "footer_icons/reading-book.png", class: "icon-photo" %> %>
-    <p class="footer-text">review</p>
-  <% end %>
-</div>
-
-<div class="nav-icon">
-  <%= link_to "#", class: "photo-link" do %>
-  <%# <%= image_tag "footer_icons/live-chat.png", class: "icon-photo" %> %>
-  <p class="footer-text">chat</p>
-  <% end %>
+  <div class="photo-link">
+    <%= link_to "#" do %>
+    <div class="video-photo"></div>
+    <a class="footer-text">chat</a>
+    <% end %>
+  </div>
 </div>
