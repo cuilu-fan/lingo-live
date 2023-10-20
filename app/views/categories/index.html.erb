@@ -1,2 +1,10 @@
-<h1>The list of all categories in this page</h1>
-<h2>Please check Figma to see the style of this page</h2>
+<h1>Categories</h1>
+
+<div class="categories">
+  <% @categories.each do |category| %>
+    <div class="category">
+      <h2><%= category.name %></h2>
+    </div>
+  <% end %>
+</div>
+
