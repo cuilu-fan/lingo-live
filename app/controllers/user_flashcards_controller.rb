@@ -9,6 +9,10 @@ class UserFlashcardsController < ApplicationController
     @user_flashcard.save
   end
 
+  def create_flashcard
+    
+  end
+
   private
 
   def user_flashcard_params
