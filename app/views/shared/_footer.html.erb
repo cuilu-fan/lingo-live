@@ -1,26 +1,26 @@
-<div class="nav-icon">
-  <%= link_to root_path do %>
-    <div class="photo-link">
+<footer>
+  <div class="nav-icon">
+    <%= link_to root_path do %>
+      <div class="photo-link">
         <div class="flashcard-photo"></div>
         <a class="footer-text">create</a>
+      </div>
+    <% end %>
+  </div>
+  <div class="nav-icon">
+    <div class="photo-link">
+      <%= link_to "/categories" do %>
+        <div class="review-photo"></div>
+        <a class="footer-text">review</a>
+      <% end %>
     </div>
-  <% end %>
-</div>
-
-<div class="nav-icon">
-  <div class="photo-link">
-    <%= link_to "/categories" do %>
-      <div class="review-photo"></div>
-      <a class="footer-text">review</a>
-    <% end %>
   </div>
-</div>
-
-<div class="nav-icon">
-  <div class="photo-link">
-    <%= link_to "#" do %>
-    <div class="video-photo"></div>
-    <a class="footer-text">chat</a>
-    <% end %>
+  <div class="nav-icon">
+    <div class="photo-link">
+      <%= link_to "#" do %>
+        <div class="video-photo"></div>
+        <a class="footer-text">chat</a>
+      <% end %>
+    </div>
   </div>
-</div>
+</footer>
