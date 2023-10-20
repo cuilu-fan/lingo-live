@@ -2,10 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="flashcard-categories"
 export default class extends Controller {
-  static targets = [ "searchBox", "suggestions" ];
-  categories = ["Household", "Animals", "Food", "Furniture"];
+  static targets = [ "searchBox", "suggestions",  ];
+  static values = { category: String };
 
   showSuggestions() {
+    this.categories = JSON.parse(this.categoryValue);
     const input = this.searchBoxTarget.value.toLowerCase();
     this.suggestionsTarget.innerHTML = '';
     if (input.length === 0) {
