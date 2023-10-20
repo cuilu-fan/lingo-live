@@ -1,13 +1,65 @@
+// STYLE FOR THE SECTION
 .flash-background {
   background-image: url("background_pic1.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: calc(100% - 5px) calc(100% - 50px);
-  min-height: 100vh;
+  background-position: calc(100% - 5px) calc(100% - -70px);
   z-index: 0;
   margin-top: 5px;
 }
 
+.Text-Flash {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+// STYLE FOR THE WORD INPUT AND TRANSLATION
+.flashcard_word {
+  background-color: #E7EDFF;
+  padding: 25px 0px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
+}
+
+.flashcard_word input {
+  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
+}
+
+.flashcard_word h5 {
+  vertical-align: bottom;
+  display: inline;
+}
+
+.flashcard_word input {
+  padding: 5px;
+  margin: 5px 5px;
+}
+
+.flashcard_word h5 {
+  padding: 10px;
+  margin: 5px 20px;
+}
+
+.flashcard_word .line {
+  height: 2px;
+  background-color: #adc0f9;
+  width: 100%;
+}
+
+#word-flashNew{
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+// STYLE FOR THE CATEGORIES INPUT
 .autocomplete {
   position: relative;
   display: flex;
@@ -30,15 +82,16 @@
 #suggestions {
   list-style-type: none;
   padding: 5px 0px;
-  position: relative;
+  position: absolute;
   background-color: #fff;
   border: none;
   display: none;
-  max-height: 150px;
+  height: auto;
   overflow-y: auto;
   width: 298px;
   border-radius: 25px;
-  z-index: 2;
+  z-index: 12;
+  top: 65px;
 }
 #suggestions li {
   padding: 10px;
@@ -47,57 +100,12 @@
   background-color: #F1F1F1;
 }
 
-.Text-Flash {
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 5px;
-}
-
-.flashcard_word {
-  background-color: #E7EDFF;
-  padding: 25px 0px;
-  border-radius: 25px;
-  margin-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
-}
-
-.flashcard_word input {
-  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
-}
-
-.flashcard_word h5 {
-  vertical-align: bottom;
-  display: inline;
-}
-
-.flashcard_word input,
-.flashcard_word h5 {
-  padding: 10px;
-  margin: 5px 20px;
-}
-
-.flashcard_word .line {
-  height: 2px;
-  background-color: #adc0f9;
-  width: 100%;
-}
-
-#word-flash {
-  width: 300px;
-  padding: 10px;
-  border: none;
-  border-radius: 25px;
-  background-color: #fff;
-  margin-bottom: 20px;
-}
-
+// STYLE FOR THE BUTTON CONFIRM
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  min-height: 27vh;
 }
 
 .flash-btn {
@@ -105,6 +113,7 @@
   padding: 10px 40px;
 }
 
+// STYLE FOR THE POPUP
 .popup {
   display: none;
   position: fixed;
