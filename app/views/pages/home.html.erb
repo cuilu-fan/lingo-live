@@ -16,8 +16,8 @@
         <% end %>
       </div>
     </div>
-    <div class="btn-img-container" data-controller="create-hover">
-      <button type="submit" class="home-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor">Create Flashcard</button>
+    <div class="btn-img-container">
+      <%= link_to 'Create Flashcard', new_user_flashcard_path, class: 'home-btn' %>
       <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
     </div>
   </div>
