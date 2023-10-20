@@ -1,0 +1,14 @@
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.category {
+  flex: 1 0 calc(100% / 10 - 20px);
+  background-color: #90ee90;
+  color: #000000;
+  margin: 10px;
+  padding: 20px;
+}
+
