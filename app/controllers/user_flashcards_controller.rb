@@ -12,8 +12,8 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create_category
+    @category_new = Category.new(category_params)
     @category = current_user.category_id
-    @category_new = Category.new
     @category_new.save if @category.default == false
   end
 
@@ -24,6 +24,6 @@ class UserFlashcardsController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:category_id, :name, :default)
+    params.require(:category).permit(:category_id, :name)
   end
 end
