@@ -1,7 +1,8 @@
 class UserFlashcardsController < ApplicationController
   def new
     @user_flashcard = UserFlashcard.new
-    # @categories = Category.all
+    categories = Category.all
+    @categories = categories.map(&:name)
   end
 
   def create

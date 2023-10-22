@@ -3,26 +3,24 @@
     <div class="sub_container">
       <p class="Text-Flash">Create your Flashcard:</p>
       <div class="flashcard_word">
-        <input type="text" name="word" id="word-flash" placeholder="Type your word here" data-create-hover-target="wordInput">
+        <input type="text" name="word" id="word-flashNew" placeholder="Type your word here" data-create-hover-target="wordInput">
         <span class="line"></span>
         <h5>Translation here</h5>
       </div>
     </div>
-    <div class="autocomplete" data-controller="flashcard-categories">
+    <div class="autocomplete" data-controller="flashcard-categories" data-flashcard-categories-category-value="<%= @categories.to_json %>">
       <input type="text" id="search-box" data-flashcard-categories-target="searchBox" data-create-hover-target="boxSearch" placeholder="Write your Category" data-action="keyup->flashcard-categories#showSuggestions">
       <ul id="suggestions" data-flashcard-categories-target="suggestions"></ul>
     </div>
     <div class="btn-container">
       <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button>
-        <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
+    </div>
+    <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
           <div class="popup-content">
             <p class="popupText">Saved!</p>
             <%= button_tag 'Continue', class: "popup-btn", id: 'continue-popup-button', "data-action" => "click->create-hover#continue click->reset-inputs#resetInputs" %>
             <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
           </div>
         </div>
-    </div>
   </div>
-
-
 </section>
