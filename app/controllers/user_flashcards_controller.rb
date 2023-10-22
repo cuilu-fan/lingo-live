@@ -11,12 +11,6 @@ class UserFlashcardsController < ApplicationController
     @user_flashcard.save
   end
 
-  def create_category
-    @category_new = Category.new(category_params)
-    @category = current_user.category_id
-    @category_new.save if @category.default == false
-  end
-
   private
 
   def user_flashcard_params

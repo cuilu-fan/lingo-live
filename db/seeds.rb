@@ -12,9 +12,9 @@ Translation.create(primary_language_word: "schüssel", target_language_word: "ke
 Translation.create(primary_language_word: "hund", target_language_word: "dog", default: false)
 
 Category.destroy_all
-Category.create(name: "Furniture", default: true)
-Category.create(name: "Food", default: true)
-Category.create(name: "Animals", default: true)
-Category.create(name: "Household", default: true)
+Category.create(name: "Furniture")
+Category.create(name: "Food")
+Category.create(name: "Animals")
+Category.create(name: "Household")
 
-User.create(first_name: "james", last_name:"smith", email: "james@gmail.com", password: "12345678")
+User.create(first_name: "james", last_name: "smith", email: "james@gmail.com", password: "12345678")
