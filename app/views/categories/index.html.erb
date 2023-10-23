@@ -1,7 +1,8 @@
-<h1>Categories</h1>
-
-<div class="categories">
-  <% @categories.each do |category| %>
-    <h2><%=link_to category.name, category_path(category), class:"category" %></h2>
-  <% end %>
+<div class="categories--container">
+    <% @categories.each do |category| %>
+  <div class="category">
+      <%=link_to category.name, category_path(category), class:"category" %>
+      <%= category.user_flashcards.count %>
+  </div>
+    <% end %>
 </div>
