@@ -1,11 +1,16 @@
-<div class="re_fl--container">
-  <div class="random-flashcard">
-    <%= @flashcards.sample.translation.primary_language_word %>
+<div class="review-page" data-controller="show">
+  <div class="re_fl--container">
+    <div class="random-flashcard">
+      <%= @flashcards.sample.translation.primary_language_word %>
+    </div>
+    <div id="translated-side" class="random-flashcard d-none" data-show-target="backElement">
+      <%= @flashcards.sample.translation.target_language_word %>
+    </div>
   </div>
-</div>
 
-<div class="re_fl--container">
-  <div class="choices" data-controller="show">
-    <button class="choice--btn">Show</button>
+  <div class="re_fl--container">
+    <div class="choices">
+      <button class="choice--btn" data-show-target="buttonElement" data-action="click->show#change">Show</button>
+    </div>
   </div>
 </div>
