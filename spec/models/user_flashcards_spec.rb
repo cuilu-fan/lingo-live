@@ -5,8 +5,8 @@ RSpec.describe UserFlashcard, type: :model do
     {
       user_id: :integer,
       translation_id: :integer,
-      success: :integer,
-      failed: :integer,
+      success_count: :integer,
+      failed_count: :integer,
       category_id: :integer
     }.each do |attribute, type|
       it { is_expected.to have_db_column(attribute).of_type type }
