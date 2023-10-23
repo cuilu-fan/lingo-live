@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_17_195323) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_23_100259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,8 +69,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_17_195323) do
   create_table "user_flashcards", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
-    t.boolean "success"
-    t.boolean "failed"
+    t.integer "success", default: 0
+    t.integer "failed", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "translation_id", null: false

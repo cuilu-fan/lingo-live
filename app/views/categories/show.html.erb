@@ -1,1 +1,3 @@
-<h1>Here are the placeto review flashcards</h1>
+<% @flashcards.each do |flashcard| %>
+<%= flashcard.translation.primary_language_word %>
+<% end %>
