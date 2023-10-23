@@ -1,3 +1,11 @@
-<% @flashcards.each do |flashcard| %>
-<%= flashcard.translation.primary_language_word %>
-<% end %>
+<div class="re_fl--container">
+  <div class="random-flashcard">
+    <%= @flashcards.sample.translation.primary_language_word %>
+  </div>
+</div>
+
+<div class="re_fl--container">
+  <div class="choices" data-controller="show">
+    <button class="choice--btn">Show</button>
+  </div>
+</div>

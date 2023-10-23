@@ -9,6 +9,6 @@ class CategoriesController < ApplicationController
   # So that a user can create a category for translated words
   def show
     @category = Category.find(params[:id])
-    @flashcards = UserFlashcard.where(user: current_user).joins(:translation)
+    @flashcards = UserFlashcard.where(user: current_user, category: @category).joins(:translation)
   end
 end
