@@ -5,9 +5,12 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create
+    raise
     @user_flashcard = UserFlashcard.new(user_flashcard_params)
     @user_flashcard.user = current_user
     @user_flashcard.save
+    @category = Category.new(category_params)
+    @category.save
   end
 
   private

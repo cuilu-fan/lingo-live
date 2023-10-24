@@ -1,0 +1,8 @@
+<div class="autocomplete" data-controller="flashcard-categories" data-flashcard-categories-category-value="<%= @categories %>">
+  <input type="text" id="search-box" data-flashcard-categories-target="searchBox" data-create-hover-target="boxSearch" placeholder="Write your Category" data-action="keyup->flashcard-categories#showSuggestions">
+  <ul id="suggestions" data-flashcard-categories-target="suggestions"></ul>
+</div>
+
+<div class="btn-container">
+  <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button>
+</div>
