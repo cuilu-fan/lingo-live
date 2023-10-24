@@ -2,10 +2,10 @@
   <div class="container" data-controller="create-hover">
     <div class="sub_container">
       <p class="Text-Flash">Create your Flashcard:</p>
-      <div class="flashcard_word">
-        <input type="text" name="word" id="word-flashNew" placeholder="Type your word here" data-create-hover-target="wordInput">
+      <div class="flashcard_word" data-controller="translation">
+        <input type="text" name="word" id="word-flashNew" placeholder="Type your word here" data-create-hover-target="wordInput" data-translation-target="input" data-action="change->translation#translate">
         <span class="line"></span>
-        <h5>Translation here</h5>
+        <%= render partial: "translation", locals: { translation: @translation } %>
       </div>
     </div>
     <div class="autocomplete" data-controller="flashcard-categories" data-flashcard-categories-category-value="<%= @categories %>">
