@@ -2,6 +2,16 @@ class UserFlashcardsController < ApplicationController
   def new
     @user_flashcard = UserFlashcard.new
     @categories = Category.pluck(:name)
+    @translation = "Translation here"
+  end
+
+  def translate
+    to_translate = request.body.read
+    translation = DeepL.translate to_translate, 'DE', 'EN'
+    respond_to do |format|
+      format.html
+      format.text { render partial: "translation", locals: { translation: }, formats: [:html] }
+    end
   end
 
   def create
