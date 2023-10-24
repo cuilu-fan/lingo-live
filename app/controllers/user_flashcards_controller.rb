@@ -16,7 +16,6 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create
-
     @category = Category.find_by(name: params[:user][:category_name])
     @translation = Translation.find_by(primary_language_word: params[:user][:translation])
     @user_flashcard = UserFlashcard.new()
