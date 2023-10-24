@@ -9,9 +9,12 @@ export default class extends Controller {
 
   translate() {
     const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
-    const input = this.inputTarget.value;
     const url = "translate";
-    fetch(url, {method: "POST", headers: { "X-CSRF-Token": csrfToken ,"Accept" : "text/plain", body: {translation: input}}})
+    fetch(url, {
+      method: "POST",
+      headers: { "X-CSRF-Token": csrfToken, "Accept": "text/plain" },
+      body: this.inputTarget.value
+      })
       .then(response => response.text())
       .then((data) => {
         this.translatedwordTarget.innerHTML = data;

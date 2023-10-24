@@ -5,14 +5,12 @@ class UserFlashcardsController < ApplicationController
   end
 
   def translate
-    DeepL.configure do |config|
-      config.auth_key = ENV['DEEPL_AUTH_KEY']
-      config.host = 'https://api-free.deepl.com'
+    to_translate = request.body.read
+    translation = DeepL.translate to_translate, 'EN', 'DE'
+    respond_to do |format|
+      format.html
+      format.text { render partial: "translation", locals: { translation: }, formats: [:html] }
     end
-    p source = request.body.read
-
-    DeepL.translate 'EN', 'DE'
-
   end
 
   def create
@@ -22,10 +20,6 @@ class UserFlashcardsController < ApplicationController
   end
 
   private
-
-  def translation_params
-    params.require(:body).permit(:translation)
-  end
 
   def user_flashcard_params
     params.require(:user_flashcard).permit(:flashcard_id, :category_id)
