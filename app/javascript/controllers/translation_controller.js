@@ -17,7 +17,7 @@ export default class extends Controller {
       })
       .then(response => response.text())
       .then((data) => {
-        this.translatedwordTarget.innerHTML = data;
+        this.translatedwordTarget.outerHTML = data;
       });
   }
 
