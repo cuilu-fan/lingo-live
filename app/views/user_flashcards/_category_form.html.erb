@@ -6,3 +6,13 @@
 <div class="btn-container">
   <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button>
 </div>
+
+<%= form_with(model: @category url: categories_path method: "post") do |form| %>
+      <div class="autocomplete" data-controller="flashcard-categories" data-flashcard-categories-category-value="<%= @categories %>">
+        <%= f.text_field id:"search-box", data:{flashcard_category_target: "searchBox", create_hover_target: "boxSearch", action: "keyup->flashcard-categories#showSuggestions" } placeholder:"Write your Category" %>
+        <ul id="suggestions" data-flashcard-categories-target="suggestions"></ul>
+      </div>
+      <div class="btn-container">
+        <%= f.submit "Add to Flashcard" class:"home-btn flash-btn", data:{create_hover_target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
+      </div>
+    <% end %>
