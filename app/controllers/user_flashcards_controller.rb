@@ -16,11 +16,8 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create
-    @category = Category.find_by(name: params[:user][:category_name])
     category_nil
-    @category.save
     translation_nil
-    @translation.save
     @user_flashcard = UserFlashcard.new(user_flashcard_params)
     @user_flashcard.category = @category
     @user_flashcard.translation = @translation
@@ -40,14 +37,18 @@ class UserFlashcardsController < ApplicationController
   end
 
   def category_nil
-    @category = Category.new(name: params[:user][:category_name], default: false)
+    @category = Category.find_by(name: params[:user][:category_name])
     if @category.nil?
+      @category = Category.new(name: params[:user][:category_name], default: false)
+      @category.save
     end
   end
 
   def translation_nil
-    @translation = Translation.new(primary_language_word: params[:user][:primary], target_language_word: params[:user][:target_trans])
+    @translation = Translation.find_by(primary_language_word: params[:user][:primary], target_language_word: params[:user][:target_trans])
     if @translation.nil?
+      @translation = Translation.new(primary_language_word: params[:user][:primary], target_language_word: params[:user][:target_trans])
+      @translation.save
     end
   end
 end
