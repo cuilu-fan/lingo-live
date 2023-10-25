@@ -1,6 +1,6 @@
 <div class="review-page" data-controller="show">
   <div class="re_fl--container">
-    <div class="random-flashcard">
+    <div class="random-flashcard" data-show-target="frontElement">
       <%= @flashcards.sample.translation.primary_language_word %>
     </div>
     <div id="translated-side" class="random-flashcard d-none" data-show-target="backElement">
@@ -9,8 +9,16 @@
   </div>
 
   <div class="re_fl--container">
+    <div class="choices" data-show-target="buttonElement">
+      <button class="choice--btn" data-action="click->show#change">Show</button>
+    </div>
+    <div class="buttons_wrap">
     <div class="choices">
-      <button class="choice--btn" data-show-target="buttonElement" data-action="click->show#change">Show</button>
+      <button class="choice--btn d-none" data-show-target="reviewElement" data-action="click->show#change, click->show#next">Review later</button>
+    </div>
+    <div class="choices">
+      <button class="choice--btn d-none" data-show-target="review2Element" data-action="click->show#change, click->show#next">I know</button>
+    </div>
     </div>
   </div>
 </div>

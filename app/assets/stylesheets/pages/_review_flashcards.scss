@@ -17,6 +17,11 @@
   height: 80px;
 }
 
+.buttons_wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .choices{
   display: flex;
   justify-content: space-around;
@@ -28,7 +33,7 @@
   background-color: #5b4cff;
   color: white;
   font-size: 15px;
-  width: 90px;
+  width: 120px;
   height: 45px;
   border-radius: 50px;
   border: none;
