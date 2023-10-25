@@ -14,12 +14,12 @@
     </div>
 
     <div class="btn-container">
-      <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button>
+      <%# <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button> %>
       <%= simple_form_for :user, url: user_flashcards_path, data: {turbo_method: :post, action: "submit->create-hover#send"} do |f| %>
         <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
         <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
         <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
-        <%= f.submit "Submit 2" %>
+        <%= f.submit "Save as Flashcard", id:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
       <% end %>
     </div>
 
