@@ -10,5 +10,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @flashcards = UserFlashcard.where(user: current_user, category: @category).joins(:translation)
+    @flashcard = @flashcards.find_by(known: false)
   end
 end
