@@ -24,6 +24,10 @@ household = Category.create(name: "Household")
 User.destroy_all
 james = User.create!(first_name: "james", last_name: "smith", email: "james@gmail.com", password: "12345678")
 cuilu = User.create!(first_name: "cuilu", last_name: "fan", email: "cuilu@example.com", password: "12345678" )
+mark = User.create!(first_name: "mark", last_name: "smith", email: "makr@example.com", password: "12345678" )
+
+james.add_friend(cuilu)
+cuilu.add_friend(mark)
 
 
 UserFlashcard.create(user: james, translation: tisch, category: furniture)
