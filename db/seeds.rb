@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+UserFlashcard.destroy_all
+
 Translation.destroy_all
 tisch = Translation.create(primary_language_word: "tisch", target_language_word: "table", default: false)
 stuhl = Translation.create(primary_language_word: "stuhl", target_language_word: "chair", default: false)
