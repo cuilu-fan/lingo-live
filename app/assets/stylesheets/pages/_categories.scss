@@ -1,0 +1,19 @@
+.categories--container {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: #D0E7BF;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  height: 60px;
+}
