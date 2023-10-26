@@ -4,7 +4,7 @@
   justify-content: center;
   margin-top: 15px;
   height: 100%;
-  background-image:url(background_pic2.png);
+  background-image: linear-gradient( url(background_pic2.png));
 }
 
 
@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(#FCA401, 0.6);
+  background-color: rgba(#FCA401, 1);
   border: 2px solid #FCA401;
 }
 
@@ -25,14 +25,21 @@
   height: fit-content;
 }
 
-.Friends-call {
+.friends-call {
   height: fit-content;
   margin-right: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
-.Random-call{
+
+.random-call{
 height: fit-content;
 margin-left: 8px;
+text-decoration: none;
+display: flex;
+align-items: center;
 }
 
 .buttons {
