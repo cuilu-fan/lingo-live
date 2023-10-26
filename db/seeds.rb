@@ -25,8 +25,14 @@ User.destroy_all
 james = User.create!(first_name: "james", last_name: "smith", email: "james@gmail.com", password: "12345678")
 cuilu = User.create!(first_name: "cuilu", last_name: "fan", email: "cuilu@example.com", password: "12345678" )
 mark = User.create!(first_name: "mark", last_name: "smith", email: "makr@example.com", password: "12345678" )
+juan = User.create!(first_name: "juan", last_name: "laborde", email: "juan@gmail.com", password: "12345678" )
 
 james.add_friend(cuilu)
+james.add_friend(juan)
+cuilu.add_friend(juan)
+mark.add_friend(juan)
+james.add_friend(mark)
+mark.add_friend(cuilu)
 cuilu.add_friend(mark)
 
 

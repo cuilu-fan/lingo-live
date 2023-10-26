@@ -1,0 +1,10 @@
+<div class="container">
+<% displayed_users = Set.new %>
+<% current_user.friends.each do |friend| %>
+  <% other_user = friend.user_1 == current_user ? friend.user_2 : friend.user_1 %>
+  <% unless displayed_users.include?(other_user.id) %>
+    <%= other_user.first_name %>
+    <% displayed_users.add(other_user.id) %>
+  <% end %>
+<% end %>
+</div>
