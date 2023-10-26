@@ -19,6 +19,14 @@ footer{
   margin-top: 0.5rem;
 }
 
+.home-photo{
+  height: 50%;
+  background-image: asset-url("footer_icons/home.png");
+  width: 40px;
+  background-position: center;
+  background-size: cover;
+}
+
 .flashcard-photo{
   height: 50%;
   background-image: asset-url("footer_icons/flash-cards-bold.png");
