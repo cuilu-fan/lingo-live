@@ -41,7 +41,7 @@ class UserFlashcardsController < ApplicationController
   private
 
   def user_flashcard_params
-    params.require(:user_flashcard).permit(:flashcard_id, :category_id,:known)
+    params.require(:user_flashcard).permit(:flashcard_id, :category_id, :known)
   end
 
   def category_params
