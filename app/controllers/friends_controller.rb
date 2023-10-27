@@ -4,7 +4,7 @@ class FriendsController < ApplicationController
   end
 
   def show
-    @chatroom = Chatroom.find(params[:id])
+    @chatroom = Friend.find(params[:id])
     @message = Message.new
   end
 end
