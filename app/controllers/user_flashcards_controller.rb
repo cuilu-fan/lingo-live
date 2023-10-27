@@ -26,6 +26,11 @@ class UserFlashcardsController < ApplicationController
     redirect_to new_user_flashcard_path
   end
 
+  def update
+    @flashcard = UserFlashcard.find(params[:id])
+    @flashcard.known = 
+  end
+
   private
 
   def user_flashcard_params
