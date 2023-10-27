@@ -1,3 +1,4 @@
+SUCCESS_MESSAGE = "Congrats! You have successfully remembered all the words in this category!"
 class CategoriesController < ApplicationController
   # Max, can you please work on the index method?
   # So that all categories will be shown on the path /categories
@@ -9,7 +10,17 @@ class CategoriesController < ApplicationController
   # So that a user can create a category for translated words
   def show
     @category = Category.find(params[:id])
-    @flashcards = UserFlashcard.where(user: current_user, category: @category).joins(:translation)
-    @flashcard = @flashcards.find_by(known: false)
+    flashcards = UserFlashcard.where(user: current_user, category: @category, known: false)
+                              .joins(:translation)
+                              .order(:success_count, :failed_count)
+    if flashcards.empty?
+      known_flashcards = UserFlashcard.where(user: current_user, category: @category, known: true)
+      known_flashcards.map do |known_flashcard|
+        known_flashcard.known = false
+        known_flashcard.save
+      end
+      redirect_to categories_path, notice: SUCCESS_MESSAGE
+    end
+    @flashcard = flashcards.first
   end
 end

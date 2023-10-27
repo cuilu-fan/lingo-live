@@ -14,14 +14,16 @@
     </div>
     <div class="buttons_wrap">
     <div class="choices">
-      <%= simple_form_for :user_flashcard, url: user_flashcard_path, html: {class:"d-none"}, method: :patch, data: { turbo: false, show_target:"reviewElement"} do |f|%>
-      <%= f.hidden_field :known, value: false %>
-      <%= f.submit "Review later"%>
+      <%= simple_form_for :user_flashcard, url: user_flashcard_path(@flashcard), html: {class:"d-none"}, method: :patch, data: { turbo: false, show_target:"reviewElement"} do |f|%>
+        <%= f.hidden_field :known, value: false %>
+        <%= f.submit "Review later", class:"simple_form_button"%>
       <% end %>
-      <%# <button class="choice--btn d-none" data-show-target="reviewElement" data-action="click->show#review">Review later</button> %>
     </div>
     <div class="choices">
-      <button class="choice--btn d-none" data-show-target="knownElement" data-action="click->show#known">I know</button>
+      <%= simple_form_for :user_flashcard, url: user_flashcard_path(@flashcard), html: {class:"d-none"}, method: :patch, data: { turbo: false, show_target:"knownElement"} do |f|%>
+        <%= f.hidden_field :known, value: true %>
+        <%= f.submit "I know", class:"simple_form_button"%>
+      <% end %>
     </div>
     </div>
   </div>

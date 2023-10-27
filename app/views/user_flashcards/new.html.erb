@@ -19,7 +19,7 @@
         <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
         <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
         <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
-        <%= f.submit "Save as Flashcard", id:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
+        <%= f.submit "Save as Flashcard", class:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
       <% end %>
     </div>
 
