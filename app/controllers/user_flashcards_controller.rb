@@ -26,10 +26,22 @@ class UserFlashcardsController < ApplicationController
     redirect_to new_user_flashcard_path
   end
 
+  def update
+    @flashcard = UserFlashcard.find(params[:id])
+    @flashcard.known = user_flashcard_params[:known]
+    if user_flashcard_params[:known] == "truee"
+      @flashcard.success_count += 1
+    else
+      @flashcard.failed_count += 1
+    end
+    @flashcard.save
+    redirect_to category_path(@flashcard.category)
+  end
+
   private
 
   def user_flashcard_params
-    params.require(:user_flashcard).permit(:flashcard_id, :category_id)
+    params.require(:user_flashcard).permit(:flashcard_id, :category_id, :known)
   end
 
   def category_params

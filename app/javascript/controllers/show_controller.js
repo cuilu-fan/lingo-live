@@ -2,31 +2,27 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="show"
 export default class extends Controller {
-  static targets = ["buttonElement", "frontElement", "backElement", "reviewElement", "review2Element"]
+  static targets = ["showbuttonElement", "frontElement", "backElement", "reviewElement", "knownElement"]
   connect() {
     console.log("hello")
     console.log(this.frontElementTarget)
   }
 
-  change() {
+  reveal() {
     // Here: "show" button gone, two review options button shown
     this.backElementTarget.classList.toggle("d-none")
-    this.buttonElementTarget.classList.add("d-none")
-    this.reviewElementTarget.classList.remove("d-none")
-    this.review2ElementTarget.classList.remove("d-none")
+    this.showbuttonElementTarget.classList.toggle("d-none")
+    this.reviewElementTarget.classList.toggle("d-none")
+    this.knownElementTarget.classList.toggle("d-none")
     // Here: two review options button gone, "show" button shown again
 
   }
 
-  next(){
-     // Here: two review options button gone, "show" button shown again
-    this.reviewElementTarget.classList.toggle("d-none")
-    this.review2ElementTarget.classList.toggle("d-none")
-    this.backElementTarget.classList.toggle("d-none")
-    this.buttonElementTarget.classList.toggle("d-none")
+  review(){
+
   }
 
-  increment() {
-    console.log(this.frontElementTarget)
+  known() {
+    console.log(this.ElementTarget)
   }
 }
