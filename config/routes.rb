@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'user_flashcards/translate', to: 'user_flashcards#translate', as: :translate
   resources :categories, except: [:destroy]
   resources :calls, only: [ :index, :show ]
-  resources :friends, only: :index do
+  resources :friends, only: [:index, :show] do
     resources :messages, only: [:create ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
