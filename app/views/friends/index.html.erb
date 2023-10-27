@@ -15,7 +15,9 @@
            <p>4.5 <i class="fas fa-star"></i></p>
           </div>
           <div class="friend-buttons">
+          <%=link_to friend_path(friend) do%>
             <button class="text-button"><i class="fas fa-comment"></i></button>
+          <% end %>
             <button class="call-button"><i class="fas fa-phone"></i></button>
           </div>
         </li>
