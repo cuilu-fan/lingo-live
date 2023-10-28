@@ -1,12 +1,20 @@
 <div class="container chatroom">
-  <h1><%= @chatroom.user_2.first_name %></h1>
+  <% if current_user.first_name == @chatroom.user_1.first_name %>
+    <h1><%= @chatroom.user_2.first_name %></h1>
+  <% else %>
+    <h1><%= @chatroom.user_1.first_name %></h1>
+  <% end %>
 
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
       <div id="message-<%= message.id %>">
         <small>
+        <% if current_user.first_name == message.friend.user_1.first_name %>
           <strong><%= message.friend.user_1.first_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        <% else %>
+          <strong><%= message.friend.user_2.first_name %></strong>
+        <% end %>
+          <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
         </small>
         <p><%= message.text %></p>
       </div>
@@ -18,7 +26,7 @@
 %>
   <%= f.input :text,
     label: false,
-    placeholder: "Message #{@chatroom.user_2.first_name}",
+    placeholder: " Send a Message",
     wrapper_html: {class: "flex-grow-1"}
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
