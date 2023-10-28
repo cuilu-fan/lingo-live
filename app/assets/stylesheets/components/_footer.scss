@@ -21,7 +21,7 @@ footer{
 
 .home-photo{
   height: 50%;
-  background-image: asset-url("footer_icons/home.png");
+  background-image: asset-url("footer_icons/004-homepage.png");
   width: 40px;
   background-position: center;
   background-size: cover;
@@ -29,7 +29,7 @@ footer{
 
 .flashcard-photo{
   height: 50%;
-  background-image: asset-url("footer_icons/flash-cards-bold.png");
+  background-image: asset-url("footer_icons/003-translation.png");
   width: 40px;
   background-position: center;
   background-size: cover;
@@ -37,7 +37,7 @@ footer{
 
 .review-photo{
   height: 50%;
-  background-image: asset-url("footer_icons/reading-book.png");
+  background-image: asset-url("footer_icons/001-flash-cards.png");
   width: 40px;
   background-position: center;
   background-size: cover;
@@ -45,7 +45,7 @@ footer{
 
 .video-photo{
   height: 50%;
-  background-image: asset-url("footer_icons/live-chat.png");
+  background-image: asset-url("footer_icons/002-live-chat.png");
   width: 40px;
   background-position: center;
   background-size: cover;
@@ -53,4 +53,5 @@ footer{
 .footer-text{
   color: black;
   text-decoration: none;
+  // font-size: x-small;
 }
