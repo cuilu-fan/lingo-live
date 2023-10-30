@@ -2,14 +2,14 @@
   <ul class="navbar-nav me-auto">
     <div class="navbar-list">
       <div>
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "LingoLive.png", class: "logo-pic" %>
+        <%= link_to root_path do %>
+          <%= image_tag "Logo_transparent3.png", class: "logo-pic" %>
         <% end %>
       </div>
       <div>
         <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "leonardo.png", class: "avatar avatar-navbar", alt: "dropdown menu" %>
+            <%= image_tag "Avatar1.png", class: "avatar avatar-navbar", alt: "dropdown menu" %>
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "My profile", edit_user_registration_path, class: "dropdown-item" %>
