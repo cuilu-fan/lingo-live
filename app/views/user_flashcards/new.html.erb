@@ -1,28 +1,34 @@
 <section class="flash-background">
-  <div class="container"data-controller="create-hover">
+  <div class="container" data-controller="create-hover">
     <div class="sub_container">
       <p class="Text-Flash">Create your Flashcard:</p>
-      <div class="flashcard_word">
-        <input type="text" name="word" id="word-flash" placeholder="Type your word here" data-create-hover-target="wordInput">
+      <div class="flashcard_word" data-controller="translation">
+        <input type="text" name="word" id="word-flashNew" placeholder="Type your word here" data-create-hover-target="wordInput" data-translation-target="input" data-action="change->translation#translate">
         <span class="line"></span>
-        <h5>Translation here</h5>
+        <%= render partial: "translation", locals: { translation: @translation } %>
       </div>
     </div>
-    <div class="autocomplete" data-controller="flashcard-categories">
+    <div class="autocomplete" data-controller="flashcard-categories" data-flashcard-categories-category-value="<%= @categories %>">
       <input type="text" id="search-box" data-flashcard-categories-target="searchBox" data-create-hover-target="boxSearch" placeholder="Write your Category" data-action="keyup->flashcard-categories#showSuggestions">
       <ul id="suggestions" data-flashcard-categories-target="suggestions"></ul>
     </div>
+
     <div class="btn-container">
-      <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button>
-        <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
-          <div class="popup-content">
-            <p class="popupText">Saved!</p>
-            <%= button_tag 'Continue', class: "popup-btn", id: 'continue-popup-button', "data-action" => "click->create-hover#continue click->reset-inputs#resetInputs" %>
-            <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
-          </div>
-        </div>
+      <%# <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button> %>
+      <%= simple_form_for :user, url: user_flashcards_path, data: {turbo_method: :post, action: "submit->create-hover#send"} do |f| %>
+        <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
+        <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
+        <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
+        <%= f.submit "Save as Flashcard", class:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
+      <% end %>
+    </div>
+
+    <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
+      <div class="popup-content">
+        <p class="popupText">Saved!</p>
+        <%= button_tag 'Continue', class: "popup-btn", id: 'continue-popup-button', "data-action" => "click->create-hover#continue click->reset-inputs#resetInputs" %>
+        <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
+      </div>
     </div>
   </div>
-
-
 </section>

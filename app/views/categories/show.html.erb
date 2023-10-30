@@ -1,1 +1,34 @@
-<h1>Here are the placeto review flashcards</h1>
+<div class="review-page" data-controller="show">
+  <div class="re_fl--container">
+    <div id="primary-side" class="random-flashcard" data-show-target="frontElement">
+      <%= @flashcard.translation.primary_language_word %>
+    </div>
+    <div id="translated-side" class="random-flashcard d-none" data-show-target="backElement">
+      <%= @flashcard.translation.target_language_word %>
+    </div>
+  </div>
+
+  <div class="re_fl--container">
+    <div class="choices" data-show-target="showbuttonElement">
+      <button class="choice--btn" data-action="click->show#reveal">Show</button>
+    </div>
+    <div class="buttons_wrap">
+    <div class="choices">
+      <%= simple_form_for :user_flashcard, url: user_flashcard_path(@flashcard), html: {class:"d-none"}, method: :patch, data: { turbo: false, show_target:"reviewElement"} do |f|%>
+        <%= f.hidden_field :known, value: false %>
+        <%= f.submit "Review later", class:"simple_form_button"%>
+      <% end %>
+    </div>
+    <div class="choices">
+      <%= simple_form_for :user_flashcard, url: user_flashcard_path(@flashcard), html: {class:"d-none"}, method: :patch, data: { turbo: false, show_target:"knownElement"} do |f|%>
+        <%= f.hidden_field :known, value: true %>
+        <%= f.submit "I know", class:"simple_form_button"%>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div hidden id="flashcards">
+  <%= @flashcards %>
+</div>

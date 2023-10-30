@@ -1,0 +1,73 @@
+.call-index {
+  display: grid;
+  border-radius: 8px;
+  justify-content: center;
+  margin-top: 15px;
+  height: 100%;
+}
+
+.call-index::before {
+  content: "";
+  background: url(background_pic1.png), url(background_pic2.png);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.practiced {
+  margin: 10px 0 10px 0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(#FCA401, 0.6);
+  border: 2px solid #FCA401;
+}
+
+.call--button {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+
+.friends-call {
+  height: fit-content;
+  margin-right: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+
+.random-call{
+height: fit-content;
+margin-left: 8px;
+text-decoration: none;
+display: flex;
+align-items: center;
+}
+
+.buttons {
+  background-color: #5B4CFF;
+  height: 40px;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  padding: 10px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}

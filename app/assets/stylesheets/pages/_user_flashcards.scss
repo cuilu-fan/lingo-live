@@ -1,50 +1,21 @@
+// STYLE FOR THE SECTION
 .flash-background {
-  background-image: url("background_pic1.png");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: calc(100% - 5px) calc(100% - 50px);
-  min-height: 100vh;
   z-index: 0;
   margin-top: 5px;
 }
 
-.autocomplete {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #E7EDFF;
-  padding: 25px 0px;
-  border-radius: 25px;
-  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
-}
-#search-box {
-  width: 300px;
-  padding: 10px;
-  border: none;
-  border-radius: 25px;
-  background-color: #fff;
-  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
-}
-#suggestions {
-  list-style-type: none;
-  padding: 5px 0px;
-  position: relative;
-  background-color: #fff;
-  border: none;
-  display: none;
-  max-height: 150px;
-  overflow-y: auto;
-  width: 298px;
-  border-radius: 25px;
-  z-index: 2;
-}
-#suggestions li {
-  padding: 10px;
-}
-#suggestions li:hover {
-  background-color: #F1F1F1;
+.flash-background::before {
+  content: "";
+  background: url(background_pic1.png), url(background_pic2.png);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .Text-Flash {
@@ -53,8 +24,9 @@
   margin-left: 5px;
 }
 
+// STYLE FOR THE WORD INPUT AND TRANSLATION
 .flashcard_word {
-  background-color: #E7EDFF;
+  background-color: rgba(#E7EDFF, 0.6);
   padding: 25px 0px;
   border-radius: 25px;
   margin-bottom: 30px;
@@ -72,7 +44,11 @@
   display: inline;
 }
 
-.flashcard_word input,
+.flashcard_word input {
+  padding: 5px;
+  margin: 5px 5px;
+}
+
 .flashcard_word h5 {
   padding: 10px;
   margin: 5px 20px;
@@ -84,8 +60,7 @@
   width: 100%;
 }
 
-#word-flash {
-  width: 300px;
+#word-flashNew{
   padding: 10px;
   border: none;
   border-radius: 25px;
@@ -93,11 +68,50 @@
   margin-bottom: 20px;
 }
 
+// STYLE FOR THE CATEGORIES INPUT
+.autocomplete {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(#E7EDFF, 0.6);
+  padding: 25px 5px;
+  border-radius: 25px;
+  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
+}
+#search-box {
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
+}
+#suggestions {
+  list-style-type: none;
+  padding: 5px 0px;
+  position: absolute;
+  background-color: #fff;
+  border: none;
+  display: none;
+  height: auto;
+  overflow-y: auto;
+  width: 298px;
+  border-radius: 25px;
+  z-index: 12;
+  top: 65px;
+}
+#suggestions li {
+  padding: 10px;
+}
+#suggestions li:hover {
+  background-color: #F1F1F1;
+}
+
+// STYLE FOR THE BUTTON CONFIRM
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  min-height: 27vh;
 }
 
 .flash-btn {
@@ -105,6 +119,7 @@
   padding: 10px 40px;
 }
 
+// STYLE FOR THE POPUP
 .popup {
   display: none;
   position: fixed;
@@ -143,4 +158,20 @@
 .popupText {
   font-size: 50px;
   font-weight: bold;
+}
+
+// STYLE FOR SAVE AS FLASHCARD BUTTON
+.simple_form_button {
+  background-color: #5b4cff;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 6px 6px 1px 1px rgba(51, 51, 52, 0.1);
 }
