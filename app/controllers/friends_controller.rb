@@ -3,8 +3,8 @@ class FriendsController < ApplicationController
     @friends = Friend.all
   end
 
-  def show
-    @chatroom = Friend.find(params[:id])
-    @message = Message.new
-  end
+  # def show
+  #   @chatroom = Friend.find(params[:id])
+  #   @message = Message.new
+  # end
 end
