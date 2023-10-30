@@ -29,7 +29,7 @@ class UserFlashcardsController < ApplicationController
   def update
     @flashcard = UserFlashcard.find(params[:id])
     @flashcard.known = user_flashcard_params[:known]
-    if user_flashcard_params[:known] == "truee"
+    if user_flashcard_params[:known] == "true"
       @flashcard.success_count += 1
     else
       @flashcard.failed_count += 1

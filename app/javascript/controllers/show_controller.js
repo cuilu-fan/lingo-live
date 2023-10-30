@@ -17,12 +17,4 @@ export default class extends Controller {
     // Here: two review options button gone, "show" button shown again
 
   }
-
-  review(){
-
-  }
-
-  known() {
-    console.log(this.ElementTarget)
-  }
 }

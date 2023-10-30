@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_123331) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_105511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_123331) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_chatrooms_on_friend_id"
+  end
+
   create_table "friends", force: :cascade do |t|
     t.bigint "user_1_id", null: false
     t.bigint "user_2_id", null: false
@@ -44,8 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_123331) do
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "friend_id", null: false
-    t.index ["friend_id"], name: "index_messages_on_friend_id"
+    t.bigint "chatroom_id", null: false
+    t.bigint "sender_id", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -96,9 +105,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_123331) do
 
   add_foreign_key "calls", "users", column: "caller_id"
   add_foreign_key "calls", "users", column: "random_user_id"
+  add_foreign_key "chatrooms", "friends"
   add_foreign_key "friends", "users", column: "user_1_id"
   add_foreign_key "friends", "users", column: "user_2_id"
-  add_foreign_key "messages", "friends"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "users", column: "reviewee_id"
   add_foreign_key "reviews", "users", column: "reviewer_id"
   add_foreign_key "user_flashcards", "categories"
