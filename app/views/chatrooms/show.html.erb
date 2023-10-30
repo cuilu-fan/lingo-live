@@ -1,10 +1,6 @@
 <div class="container chatroom"  data-controller="chatroom-subscription"
  data-chatroom-subscription-friend-id-value="<%= @chatroom.id %>">
-  <% if current_user.first_name == @chatroom.user_1.first_name %>
-    <h1><%= @chatroom.user_2.first_name %></h1>
-  <% else %>
-    <h1><%= @chatroom.user_1.first_name %></h1>
-  <% end %>
+    <h1><%= @chatroom.friend(current_user).first_name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
   <% @chatroom.messages.each do |message| %>
