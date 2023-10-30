@@ -1,24 +1,15 @@
-<div class="container chatroom">
+<div class="container chatroom"  data-controller="chatroom-subscription"
+ data-chatroom-subscription-friend-id-value="<%= @chatroom.id %>">
   <% if current_user.first_name == @chatroom.user_1.first_name %>
     <h1><%= @chatroom.user_2.first_name %></h1>
   <% else %>
     <h1><%= @chatroom.user_1.first_name %></h1>
   <% end %>
 
-  <div class="messages">
-    <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-        <% if current_user.first_name == message.friend.user_1.first_name %>
-          <strong><%= message.friend.user_1.first_name %></strong>
-        <% else %>
-          <strong><%= message.friend.user_2.first_name %></strong>
-        <% end %>
-          <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.text %></p>
-      </div>
-    <% end %>
+  <div class="messages" data-chatroom-subscription-target="messages">
+  <% @chatroom.messages.each do |message| %>
+  <%= render "friends/message", message: message %>
+  <% end %>
 
   </div>
   <%= simple_form_for [@chatroom, @message],

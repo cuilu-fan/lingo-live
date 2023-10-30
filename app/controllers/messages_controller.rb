@@ -1,9 +1,11 @@
 class MessagesController < ApplicationController
   def create
+    binding.pry
     @chatroom = Friend.find(params[:friend_id])
     @message = Message.new(params_message)
     @message.friend = @chatroom
-    @message.friend.user = current_user
+    @message.friend.user_1 = current_user
+    @message.friend.user_2 = current_user
     if @message.save
       redirect_to friend_path(@chatroom)
     else
