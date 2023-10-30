@@ -4,7 +4,7 @@
 
   <div class="messages" data-chatroom-subscription-target="messages">
   <% @chatroom.messages.each do |message| %>
-  <%= render "friends/message", message: message %>
+  <%= render "chatrooms/message", message: message %>
   <% end %>
 
   </div>

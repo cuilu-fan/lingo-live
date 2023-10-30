@@ -1,8 +1,7 @@
 <div id="message-<%= message.id %>">
   <small>
-    <%# it needs to be refine %>
     <strong>
-      <%= message.friend.user_1.first_name %>
+      <%= message.sender.first_name %>
     </strong>
     <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
   </small>
