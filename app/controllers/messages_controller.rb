@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
   def create
-    binding.pry
     @chatroom = Friend.find(params[:friend_id])
     @message = Message.new(params_message)
     @message.friend = @chatroom

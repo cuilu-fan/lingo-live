@@ -15,8 +15,8 @@
             <p>4.5 <i class="fas fa-star"></i></p>
           </div>
           <div class="friend-buttons">
-          <%=link_to friend_path(friend) do%>
-            <button class="text-button"><i class="fas fa-comment"></i></button>
+          <%= button_to friend.chatroom.nil? ? chatrooms_path(friend) : chatroom_path(friend.chatroom), class: "text-button"  do %>
+            <i class="fas fa-comment"></i>
           <% end %>
             <button class="call-button"><i class="fas fa-phone"></i></button>
           </div>
