@@ -25,9 +25,9 @@ export default class extends Controller {
 
     this.togglePopup();
 
-    // setTimeout(() => {
-    //   this.resetStyle();
-    // }, 8000);
+    setTimeout(() => {
+      this.resetStyle();
+    }, 8000);
   }
 
   togglePopup() {
