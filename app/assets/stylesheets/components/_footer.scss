@@ -1,11 +1,11 @@
 footer{
-  border-radius: 10px;
+  //border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
-  background-color: beige;
+  background-color: rgb(248, 248, 248);
+  border-top: 0.4px solid lightgray;
   height: 50px;
   font-size: 0.6em;
-  text-align: center;
 }
 
 .nav-icon{
@@ -57,4 +57,14 @@ footer{
   color: black;
   text-decoration: none;
   // font-size: x-small;
+}
+
+.activated {
+  background-color: #5b4cff;
+  color: white;
+  font-size: 5px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+  padding: 20px;
 }
