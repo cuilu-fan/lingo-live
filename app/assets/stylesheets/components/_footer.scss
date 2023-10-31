@@ -3,14 +3,14 @@ footer{
   display: flex;
   justify-content: space-evenly;
   background-color: beige;
-  height: 80px;
+  height: 50px;
+  font-size: 0.6em;
+  text-align: center;
 }
 
 .nav-icon{
   height: 100%;
 }
-
-
 
 .photo-link{
   justify-content: center;
@@ -21,10 +21,11 @@ footer{
 
 .home-photo{
   height: 50%;
-  background-image: asset-url("footer_icons/004-homepage.png");
+  background-image: asset-url("footer_icons/home2.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .flashcard-photo{
@@ -40,7 +41,8 @@ footer{
   background-image: asset-url("footer_icons/001-flash-cards.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .video-photo{
@@ -48,7 +50,8 @@ footer{
   background-image: asset-url("footer_icons/002-live-chat.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 .footer-text{
   color: black;
