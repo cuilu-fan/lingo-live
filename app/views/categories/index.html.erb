@@ -1,3 +1,8 @@
+<%=link_to new_user_flashcard_path, class:"add--button--container" do%>
+  <div class="add">
+    <%=image_tag "footer_icons/add-button.png", class:"add-button"%>
+  </div>
+<% end%>
 <div class="categories--container">
     <% @categories.each do |category| %>
   <div class="category">

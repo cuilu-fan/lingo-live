@@ -1,36 +1,37 @@
 <footer>
   <div class="nav-icon">
-  <%= link_to root_path do %>
-    <div class="photo-link">
-      <div class="home-photo"></div>
-      <a class="footer-text">home</a>
-    </div>
-  <% end %>
-</div>
-  <!-- <div class="nav-icon">
-    <%= link_to new_user_flashcard_path do %>
+    <%= link_to root_path do %>
       <div class="photo-link">
-        <div class="flashcard-photo"></div>
-        <a class="footer-text">create</a>
+        <% if params[:controller] == "pages" && params[:action] == "home" %>
+          <div class="home-photo activated"></div>
+        <% else %>
+          <div class="home-photo"></div>
+        <% end %>
       </div>
     <% end %>
-  </div> -->
-  <div class="nav-icon">
-    <div class="photo-link">
-      <%= link_to "/categories" do %>
-        <div class="review-photo"></div>
-        <a class="footer-text">review</a>
-      <% end %>
-    </div>
   </div>
+
   <div class="nav-icon">
-    <%= link_to root_path do %>
     <div class="photo-link">
-        <%= link_to calls_path do %>
-          <div class="video-photo"></div>
-          <a class="footer-text">chat</a>
+      <%= link_to categories_path do %>
+        <% if params[:controller] == "categories" && params[:action] == "index" %>
+          <div class="review-photo activated"></div>
+        <% else %>
+          <div class="review-photo"></div>
         <% end %>
       <% end %>
     </div>
+  </div>
+
+  <div class="nav-icon">
+    <%= link_to calls_path do %>
+      <div class="photo-link">
+        <% if params[:controller] == "calls" && params[:action] == "index" %>
+          <div class="video-photo activated"></div>
+        <% else %>
+          <div class="video-photo"></div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </footer>
