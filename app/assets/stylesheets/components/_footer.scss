@@ -12,8 +12,6 @@ footer{
   height: 100%;
 }
 
-
-
 .photo-link{
   justify-content: center;
   align-items: center;
@@ -26,7 +24,8 @@ footer{
   background-image: asset-url("footer_icons/home2.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .flashcard-photo{
@@ -42,7 +41,8 @@ footer{
   background-image: asset-url("footer_icons/001-flash-cards.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 
 .video-photo{
@@ -50,17 +50,11 @@ footer{
   background-image: asset-url("footer_icons/002-live-chat.png");
   width: 40px;
   background-position: center;
-  background-size: cover;
+  background-size: 60%;
+  background-repeat: no-repeat;
 }
 .footer-text{
   color: black;
   text-decoration: none;
   // font-size: x-small;
-}
-
-// for icon resizing without description text
-.home-photo, .review-photo, .video-photo {
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
