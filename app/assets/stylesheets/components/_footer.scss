@@ -4,7 +4,7 @@ footer{
   justify-content: space-evenly;
   background-color: rgb(248, 248, 248);
   border-top: 0.4px solid lightgray;
-  height: 50px;
+  height: 70px;
   font-size: 0.6em;
 }
 
@@ -61,10 +61,12 @@ footer{
 
 .activated {
   background-color: #5b4cff;
+  opacity: 0.8;
   color: white;
   font-size: 5px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   margin: 5px;
   padding: 20px;
+  border: 1px solid gray;
 }
