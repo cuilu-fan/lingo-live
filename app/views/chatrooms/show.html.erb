@@ -1,21 +1,24 @@
 <div class="container chatroom"  data-controller="chatroom-subscription"
- data-chatroom-subscription-friend-id-value="<%= @chatroom.id %>">
-    <h1><%= @chatroom.friend(current_user).first_name %></h1>
+  data-chatroom-subscription-friend-id-value="<%= @chatroom.id %>">
+  <h1><%= @chatroom.friend(current_user).first_name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-  <%= render "chatrooms/message", message: message %>
-  <% end %>
-
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender_id == current_user.id ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender_id == current_user.id ? 'sender-style' : 'receiver-style' %>">
+          <%= render "chatrooms/message", message: message %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :text,
+
+  <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f|%>
+    <%= f.input :text,
     label: false,
     placeholder: " Send a Message",
     wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
+    %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <% end %>
+
 </div>

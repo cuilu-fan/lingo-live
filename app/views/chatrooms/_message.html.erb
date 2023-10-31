@@ -1,9 +1,13 @@
 <div id="message-<%= message.id %>">
   <small>
     <strong>
-      <%= message.sender.first_name %>
+    <% if message.sender == current_user %>
+      <%= message.sender.first_name = "you" %>
+      <% else %>
+        <%= message.sender.first_name %>
+      <% end %>
     </strong>
-    <i><%= message.created_at.strftime("%b %e at %l:%M %p") %></i>
+    <i><%= message.created_at.strftime("%b %e %l:%M %p") %></i>
   </small>
   <p><%= message.text %></p>
 </div>
