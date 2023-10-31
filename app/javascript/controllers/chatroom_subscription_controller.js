@@ -8,10 +8,13 @@ export default class extends Controller {
 
   connect() {
     this.channel = createConsumer().subscriptions.create(
-      { channel: "FriendChannel", id: this.friendIdValue },
-      { received: data => console.log(data) }
+      { channel: "FriendChannel", friend_id: this.friendIdValue },
+      { received: data => this.#insertMessageAndScrollDown(data) }
     )
     console.log(`Subscribed to the chatroom with the id ${this.friendIdValue}.`)
   }
-
+  #insertMessageAndScrollDown(data) {
+    this.messagesTarget.insertAdjacentHTML("beforeend", data)
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+  }
 }
