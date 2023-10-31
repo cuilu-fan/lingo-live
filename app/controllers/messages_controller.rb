@@ -5,7 +5,11 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     @message.sender = current_user
     if @message.save
-      redirect_to friend_path(@chatroom)
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      head :ok
     else
       render "chatroom/show", status: :unprocessable_entity
     end
