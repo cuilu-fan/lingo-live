@@ -16,6 +16,7 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create
+
     category_nil
     translation_nil
     @user_flashcard = UserFlashcard.new
@@ -23,6 +24,7 @@ class UserFlashcardsController < ApplicationController
     @user_flashcard.translation = @translation
     @user_flashcard.user = current_user
     @user_flashcard.save
+
     redirect_to new_user_flashcard_path
   end
 

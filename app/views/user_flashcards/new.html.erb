@@ -1,5 +1,7 @@
 <section class="flash-background">
   <div class="container" data-controller="create-hover">
+
+
     <div class="sub_container">
       <p class="Text-Flash">Create your Flashcard:</p>
       <div class="flashcard_word" data-controller="translation">
@@ -14,19 +16,22 @@
     </div>
 
     <div class="btn-container">
+
+
       <%# <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button> %>
-      <%= simple_form_for :user, url: user_flashcards_path, data: {turbo_method: :post, action: "submit->create-hover#send"} do |f| %>
-        <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
-        <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
-        <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
-        <%= f.submit "Save as Flashcard", class:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
-      <% end %>
+       <button data-action="click->create-hover#startPopup">Save as Flashcard</button>
+
     </div>
 
     <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
       <div class="popup-content">
         <p class="popupText">Saved!</p>
-        <%= button_tag 'Continue', class: "popup-btn", id: 'continue-popup-button', "data-action" => "click->create-hover#continue click->reset-inputs#resetInputs" %>
+        <%= simple_form_for :user, url: user_flashcards_path, data: {turbo_method: :post, action: "submit->create-hover#send"} do |f| %>
+        <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
+        <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
+        <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
+        <%= f.submit "Continue", class:"simple_form_button", data: {target: "hover"} %>
+      <% end %>
         <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
       </div>
     </div>
