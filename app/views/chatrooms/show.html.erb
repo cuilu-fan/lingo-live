@@ -11,7 +11,6 @@
       </div>
     <% end %>
   </div>
-
   <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f|%>
     <%= f.input :text,
     label: false,
@@ -20,5 +19,4 @@
     %>
     <%= f.submit "Send", class: "btn btn-primary mb-3" %>
   <% end %>
-
 </div>

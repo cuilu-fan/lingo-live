@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
   def show
+    @freeze_screen = true
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
