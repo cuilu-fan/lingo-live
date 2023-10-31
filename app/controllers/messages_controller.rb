@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  def create
+  def create # rubocop:disable Metrics/MethodLength
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(params_message)
     @message.chatroom = @chatroom
