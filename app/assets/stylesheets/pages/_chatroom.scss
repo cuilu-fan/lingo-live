@@ -1,0 +1,55 @@
+  .chatroom--disable--scroll {
+    overflow: hidden;
+    display: flex;
+  }
+
+.chatroom {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  overflow: hidden;
+
+  h1 {
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+
+  .messages {
+    overflow: scroll;
+    padding: 1rem;
+  }
+
+  .message-row {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+
+  // To style the message itself
+  .sender-style, .receiver-style {
+    width: 70%;
+    max-width: 400px;
+    border-radius: 4px;
+    padding: 8px;
+    min-height: 80px;
+  }
+
+  .sender-style {
+    background-color: lightcoral;
+  }
+
+  .receiver-style {
+    background-color: lightblue;
+  }
+
+  #new_message {
+    border-top: 1px solid $gray-200;
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}

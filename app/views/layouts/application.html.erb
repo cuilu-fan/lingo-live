@@ -17,7 +17,7 @@
     <div class="page--fixed--container">
       <%= render "shared/navbar" if user_signed_in? %>
       <%= render "shared/flashes" %>
-      <div class=" page--scroll--container">
+      <div class="page--scroll--container <%= @freeze_screen ? "chatroom--disable--scroll" : nil %>">
         <%= yield %>
       </div>
       <%= render "shared/footer" if user_signed_in? %>
