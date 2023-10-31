@@ -1,12 +1,22 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="create-hover"
 export default class extends Controller {
-  static targets = ["hover", "popupContainer", "wordInput", "boxSearch", "hiddencat", "hiddentrans", "hiddentar", "translatedword", "apitrans", "hiddenapitrans"];
+  static targets = [
+    "hover",
+    "popupContainer",
+    "wordInput",
+    "boxSearch",
+    "hiddencat",
+    "hiddentrans",
+    "hiddentar",
+    "translatedword",
+    "apitrans",
+    "hiddenapitrans",
+  ];
 
   connect() {
-    console.log("hahaha", this.hiddencatTarget)
-
+    console.log("hahaha", this.hiddencatTarget);
   }
 
   changeColor() {
@@ -15,9 +25,9 @@ export default class extends Controller {
 
     this.togglePopup();
 
-    setTimeout(() => {
-      this.resetStyle();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.resetStyle();
+    // }, 8000);
   }
 
   togglePopup() {
@@ -39,12 +49,11 @@ export default class extends Controller {
   }
 
   send(e) {
-
     const category = this.boxSearchTarget.value;
-    const primary = this.wordInputTarget.value
-    const api = this.apitransTarget.innerText
-    this.hiddencatTarget.value = category
-    this.hiddentransTarget.value = primary
-    this.hiddenapitransTarget.value = api
+    const primary = this.wordInputTarget.value;
+    const api = this.apitransTarget.innerText;
+    this.hiddencatTarget.value = category;
+    this.hiddentransTarget.value = primary;
+    this.hiddenapitransTarget.value = api;
   }
 }

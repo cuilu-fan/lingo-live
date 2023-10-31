@@ -1,5 +1,5 @@
 .categories--container {
-  margin-top: 30px;
+  margin-top: 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
@@ -10,10 +10,24 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  background-color: #D0E7BF;
+  background-color: #d0e7bf;
   color: #000000;
   text-decoration: none;
   text-align: center;
   overflow: hidden;
   height: 60px;
+}
+
+.add--button--container {
+  display: flex;
+  justify-content: end;
+}
+.add {
+  display: flex;
+  justify-content: end;
+}
+
+.add-button {
+  width: 30px;
+  margin: 15px;
 }

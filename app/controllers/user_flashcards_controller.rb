@@ -16,6 +16,7 @@ class UserFlashcardsController < ApplicationController
   end
 
   def create
+
     category_nil
     translation_nil
     @user_flashcard = UserFlashcard.new
