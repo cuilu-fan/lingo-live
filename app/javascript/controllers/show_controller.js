@@ -8,6 +8,7 @@ export default class extends Controller {
     "backElement",
     "reviewElement",
     "knownElement",
+    "flashcard",
   ];
   connect() {
     console.log("hello");
@@ -16,6 +17,10 @@ export default class extends Controller {
 
   reveal() {
     // Here: "show" button gone, two review options button shown
+    // const card = this.flashcardTarget;
+    // const front = card.querySelector("primary-side");
+    // const back = card.querySelector("translated-side");
+    // front.classList.toggle("flashcard")
     this.frontElementTarget.classList.toggle("d-none");
     this.backElementTarget.classList.toggle("d-none");
     this.showbuttonElementTarget.classList.toggle("d-none");
