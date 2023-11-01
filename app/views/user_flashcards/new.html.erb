@@ -1,7 +1,5 @@
 <section class="flash-background">
   <div class="container" data-controller="create-hover">
-
-
     <div class="sub_container">
       <p class="Text-Flash">Create your Flashcard:</p>
       <div class="flashcard_word" data-controller="translation">
@@ -16,11 +14,7 @@
     </div>
 
     <div class="btn-container">
-
-
-      <%# <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button> %>
-       <button data-action="click->create-hover#startPopup">Save as Flashcard</button>
-
+      <button data-action="click->create-hover#startPopup">Save as Flashcard</button>
     </div>
 
     <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
@@ -31,7 +25,7 @@
         <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
         <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
         <%= f.submit "Continue", class:"simple_form_button", data: {target: "hover"} %>
-      <% end %>
+        <% end %>
         <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
       </div>
     </div>
