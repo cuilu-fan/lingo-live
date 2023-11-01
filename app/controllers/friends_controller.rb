@@ -16,8 +16,8 @@ class FriendsController < ApplicationController
     redirect_to friend_path, notice: "#{friend.username} is now your friend."
   end
 
-  def request
-    @friend_requests = current_user.friends.where(status: "pending")
+  def friend_request
+    
   end
 
 end
