@@ -1,12 +1,13 @@
 <div class="container chatroom"  data-controller="chatroom-subscriptions"
-  data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>">
+  data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
   <h1><%= @chatroom.friend(current_user).first_name %></h1>
-
   <div class="messages" data-chatroom-subscriptions-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender_id == current_user.id ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender_id == current_user.id ? 'sender-style' : 'receiver-style' %>">
-          <%= render "messages/message", message: message %>
+        <div class="<%= message.sender_id == current_user.id ? 'sender-style triangle right-top' : 'receiver-style triangle left-top' %>">
+          <div class="message-content">
+            <%= render "messages/message", message: message %>
+          </div>
         </div>
       </div>
     <% end %>

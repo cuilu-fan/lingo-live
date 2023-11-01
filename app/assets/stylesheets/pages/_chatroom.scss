@@ -27,21 +27,53 @@
     padding: 8px;
   }
 
-  // To style the message itself
   .sender-style, .receiver-style {
     width: 70%;
     max-width: 400px;
-    border-radius: 4px;
-    padding: 8px;
-    min-height: 80px;
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 60px;
+    position: relative;
+   
+  }
+
+  .sender-style:after, .receiver-style:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .sender-style:after {
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent transparent #FCA401;
+    right: -10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .receiver-style:before {
+    border-width: 0 20px 20px 0;
+    border-color: transparent #E7EDFF transparent transparent;
+    left: -10px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  .sender-style .message-content,
+  .receiver-style .message-content {
+    word-wrap: break-word;
   }
 
   .sender-style {
-    background-color: lightcoral;
+    background-color: #FCA401;
   }
 
   .receiver-style {
-    background-color: lightblue;
+    background-color: #E7EDFF;
   }
 
   #new_message {
