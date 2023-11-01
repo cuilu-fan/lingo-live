@@ -17,7 +17,6 @@ class FriendsController < ApplicationController
   end
 
   def friend_request
-    
+    @users = User.all.reject { |user| user == current_user }
   end
-
 end
