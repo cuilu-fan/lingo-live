@@ -1,0 +1,9 @@
+<h1>Search for Friends</h1>
+<ul>
+  <% @friends.each do |friend| %>
+    <li>
+      <%= friend.first_name %> <!-- Replace with your user attribute to display -->
+      <%= link_to 'Add Friend', new_friend_path(user), method: :post %>
+    </li>
+  <% end %>
+</ul>
