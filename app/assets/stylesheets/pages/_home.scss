@@ -14,23 +14,7 @@
   margin-left: 5px;
   margin-top: 40px;
   border-radius: 20px;
-  padding-top: 70px;
-
-  background: linear-gradient(
-    45deg,
-    #FF6666,
-    #FFB366,
-    #FFFF66,
-    #B3FF66,
-    #66FF66,
-    #66FFB3,
-    #66FFFF,
-    #6699FF,
-    #6666FF,
-    #B366FF,
-    #FF66FF,
-    #FF6699
-  );
+  padding-top: 5px;
 }
 
 .flashcard-container {
@@ -61,7 +45,6 @@
   backface-visibility: hidden;
   transition: transform 0.5s;
 }
-
 
 .flashcard-back {
   background-color: #1247e6;
@@ -150,15 +133,6 @@
   padding-top: 40px;
   justify-content: center;
   align-items: center;
-  height: 100%;
-
-  background: linear-gradient(
-    45deg,
-    #E6E6FA,
-    #D8BFD8,
-    #DDA0DD,
-    #EE82EE
-  );
 }
 
 .inner-div {
@@ -167,7 +141,6 @@
   margin-top: 20px;
   margin-bottom: 5px;
   border-radius: 20px;
-  padding-top: 50px;
   padding-left: 5px;
   padding-right: 5px;
   width: 100%;
@@ -181,7 +154,6 @@
   content: '📱';
   font-size: 60px;
   position: absolute;
-  top: -30px;
   bottom: -30px;
   left: calc(50% - 40px);
   animation: slideIn 2s ease-in-out infinite;
@@ -201,8 +173,8 @@
   margin-right: 5px;
   margin-left: 5px;
   margin-bottom: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: center;
 }
 
@@ -212,4 +184,9 @@ a {
 
 h2 {
   font-weight: 900;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
 }
