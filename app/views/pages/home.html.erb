@@ -1,9 +1,6 @@
-<h1>Hi <%= current_user.first_name %>!</h1>
-<h1>Welcome to Lingo-Live!</h1>
-<p> Break language barriers and connect globally with our instant translation and video call features. Let’s explore the world together! 😊</p>
-
 <section>
   <div class="home-wrapper">
+    <h1>Welcome <%= current_user.first_name %>!</h1>
     <div class="flashcards-container">
       <div class="flashcard-grid" data-controller="flip-card">
         <% @translations.each_with_index do |translation, index| %>
@@ -18,10 +15,23 @@
             </div>
           </div>
         <% end %>
+        <%= link_to new_user_flashcard_path, class: "add--button--container" do %>
+          <div class="add">
+            <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
+          </div>
+        <% end %>
       </div>
     </div>
+    <div class="new-div">
+      <h2><%= "JOIN A CALL" %></h2>
+      <p><%= "Chat and connect with your friends" %></p>
+      <%= link_to calls_path do %>
+        <div class="inner-div">
+          <h3 class="center-text">Click here !</h3>
+        </div>
+      <% end %>
+    </div>
     <div class="btn-img-container">
-      <%= link_to 'Create Flashcard', new_user_flashcard_path, class: 'home-btn' %>
       <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
     </div>
   </div>
