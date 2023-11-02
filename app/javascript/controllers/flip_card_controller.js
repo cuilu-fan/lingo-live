@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["flip"];
 
   flipCard(event) {
+    console.log(event.currentTarget);
     const flashcard = event.currentTarget;
     const front = flashcard.querySelector(".flashcard-front");
     const back = flashcard.querySelector(".flashcard-back");

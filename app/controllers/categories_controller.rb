@@ -1,4 +1,4 @@
-SUCCESS_MESSAGE = "Congrats! You have successfully remembered all the words in this category!"
+SUCCESS_MESSAGE = "Amazing! You have successfully remembered all the words in this category!🚀"
 class CategoriesController < ApplicationController
   def index
     @categories = Category.joins(:user_flashcards).uniq
