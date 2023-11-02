@@ -21,8 +21,9 @@ export default class extends Controller {
     // const front = card.querySelector("primary-side");
     // const back = card.querySelector("translated-side");
     // front.classList.toggle("flashcard")
-    this.frontElementTarget.classList.toggle("d-none");
-    this.backElementTarget.classList.toggle("d-none");
+    this.flashcardTarget.classList.toggle("flipcard");
+    // this.frontElementTarget.classList.toggle("d-none");
+    // this.backElementTarget.classList.toggle("d-none");
     this.showbuttonElementTarget.classList.toggle("d-none");
     this.reviewElementTarget.classList.toggle("d-none");
     this.knownElementTarget.classList.toggle("d-none");

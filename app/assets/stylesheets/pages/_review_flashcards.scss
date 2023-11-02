@@ -1,3 +1,22 @@
+.review-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.re_fl--container1 {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  margin: 40px;
+  // transform: translate(-50%, -50%);
+  // position: absolute;
+  width: 55%;
+  height: 80px;
+}
+
 .re_fl--container {
   display: flex;
   flex-direction: column;
@@ -6,27 +25,44 @@
   margin: 40px;
 }
 
-.random-flashcard {
+.single-flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.random-flashcard-front {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.5px solid rgb(242, 242, 242);
   border-radius: 8px;
   background-color: #e7edff;
-  width: 70%;
-  height: 80px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
 }
 
-.random-flashcard2 {
+.random-flashcard-back {
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   background-color: #5b4cff;
   opacity: 8px;
-  width: 70%;
+  width: 100%;
   height: 80px;
   color: #fca401;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.flipcard {
+  transform: rotateY(180deg);
 }
 
 .buttons_wrap {

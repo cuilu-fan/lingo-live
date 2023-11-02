@@ -1,10 +1,12 @@
 <div class="review-page" data-controller="show">
-  <div class="re_fl--container">
-    <div id="primary-side" class="random-flashcard" data-show-target="frontElement">
-      <%= @flashcard.translation.primary_language_word %>
-    </div>
-    <div id="translated-side" class="random-flashcard d-none" data-show-target="backElement">
-      <%= @flashcard.translation.target_language_word %>
+  <div class="re_fl--container1">
+    <div id="single-flashcard" class="single-flashcard" data-show-target="flashcard">
+      <div id="primary-side" class="random-flashcard-front" data-show-target="frontElement">
+        <%= @flashcard.translation.primary_language_word %>
+      </div>
+      <div id="translated-side" class="random-flashcard-back" data-show-target="backElement">
+        <%= @flashcard.translation.target_language_word %>
+      </div>
     </div>
   </div>
 
