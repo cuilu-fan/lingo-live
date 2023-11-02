@@ -1,38 +1,38 @@
 <section>
-    <div class="home-wrapper">
-        <h1>Welcome <%= current_user.first_name %>!</h1>
-        <div class="flashcards-container">
-            <div class="flashcard-grid" data-controller="flip-card">
-                <% @translations.each_with_index do |translation, index| %>
-                    <div class="flashcard-container">
-                        <div class="flashcard" data-flip-card-target="flip" data-action="click->flip-card#flipCard" data-id="<%= index %>">
-                            <div class="flashcard-front">
-                                <%= translation.primary_language_word %>
-                            </div>
-                            <div class="flashcard-back">
-                                <%= translation.target_language_word %>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-                <%= link_to new_user_flashcard_path, class: "add--button--container" do %>
-                    <div class="add">
-                        <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
-                    </div>
-                <% end %>
+  <div class="home-wrapper">
+    <h1>Welcome <%= current_user.first_name %>!</h1>
+    <div class="flashcards-container">
+      <div class="flashcard-grid" data-controller="flip-card">
+        <% @translations.each_with_index do |translation, index| %>
+          <div class="flashcard-container">
+            <div class="flashcard" data-flip-card-target="flip" data-action="click->flip-card#flipCard" data-id="<%= index %>">
+              <div class="flashcard-front">
+                <%= translation.primary_language_word %>
+              </div>
+              <div class="flashcard-back">
+                <%= translation.target_language_word %>
+              </div>
             </div>
-        </div>
-        <div class="new-div">
-            <h2><%= "JOIN A CALL" %></h2>
-            <p><%= "Chat and connect with your friends" %></p>
-            <%= link_to calls_path do %>
-                <div class="inner-div">
-                    <h3 class="center-text">Click here !</h3>
-                </div>
-            <% end %>
-        </div>
-        <div class="btn-img-container">
-            <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
-        </div>
+          </div>
+        <% end %>
+        <%= link_to new_user_flashcard_path, class: "add--button--container" do %>
+          <div class="add">
+            <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
+          </div>
+        <% end %>
+      </div>
     </div>
+    <div class="new-div">
+      <h2><%= "JOIN A CALL" %></h2>
+      <p><%= "Chat and connect with your friends" %></p>
+      <%= link_to calls_path do %>
+        <div class="inner-div">
+          <h3 class="center-text">Click here !</h3>
+        </div>
+      <% end %>
+    </div>
+    <div class="btn-img-container">
+      <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
+    </div>
+  </div>
 </section>
