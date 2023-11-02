@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :friends
 
   def add_friend(friend)
-    Friend.create(user_1: self, user_2: friend)
+    Friend.create(user_1: self, user_2: friend, requested_by: friend)
   end
 
   def friends
