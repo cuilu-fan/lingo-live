@@ -48,6 +48,12 @@ gem "sassc-rails"
 
 gem 'deepl-rb', require: 'deepl'
 
+gem 'vonage'
+
+gem 'opentok'
+
+gem 'dotenv-rails'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
