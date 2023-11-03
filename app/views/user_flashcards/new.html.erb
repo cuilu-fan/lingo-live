@@ -14,21 +14,13 @@
     </div>
 
     <div class="btn-container">
-      <%# <button type="submit" class="home-btn flash-btn" data-create-hover-target="hover" data-action="click->create-hover#changeColor click->create-hover#togglePopup">Confirm</button> %>
+      <%# <button data-action="click->create-hover#startPopup">Save as Flashcard</button> %>
       <%= simple_form_for :user, url: user_flashcards_path, data: {turbo_method: :post, action: "submit->create-hover#send"} do |f| %>
-        <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
-        <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
-        <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
-        <%= f.submit "Save as Flashcard", class:"simple_form_button", data: {target: "hover", action: "click->create-hover#changeColor click->create-hover#togglePopup"} %>
-      <% end %>
-    </div>
-
-    <div id="custom-popup" class="popup" data-create-hover-target="popupContainer">
-      <div class="popup-content">
-        <p class="popupText">Saved!</p>
-        <%= button_tag 'Continue', class: "popup-btn", id: 'continue-popup-button', "data-action" => "click->create-hover#continue click->reset-inputs#resetInputs" %>
-        <%= link_to 'Home', root_path, class: 'popup-btn', id: 'home-popup-button' %>
-      </div>
+          <%= f.hidden_field :category_name, :value => "some value", data: {create_hover_target: "hiddencat"} %>
+          <%= f.hidden_field :primary, :value => "some value", data: {create_hover_target: "hiddentrans"} %>
+          <%= f.hidden_field :api, :value => "some value", data: {create_hover_target: "hiddenapitrans"} %>
+          <%= f.submit "Save to Flashcards", class:"simple_form_button", data: {target: "hover"} %>
+        <% end %>
     </div>
   </div>
 </section>

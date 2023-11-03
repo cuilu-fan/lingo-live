@@ -1,4 +1,23 @@
-.re_fl--container{
+.review-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.re_fl--container1 {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  margin: 40px;
+  // transform: translate(-50%, -50%);
+  // position: absolute;
+  width: 55%;
+  height: 80px;
+}
+
+.re_fl--container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,30 +25,60 @@
   margin: 40px;
 }
 
-.random-flashcard{
+.single-flashcard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.random-flashcard-front {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.5px solid rgb(242, 242, 242);
-  border-radius: 10px;
-  background-color: #E7EDFF;
-  width: 70%;
-  height: 80px;
+  border-radius: 8px;
+  background-color: #e7edff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
 }
 
-.buttons_wrap{
+.random-flashcard-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #5b4cff;
+  opacity: 8px;
+  width: 100%;
+  height: 80px;
+  color: #fca401;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.flipcard {
+  transform: rotateY(180deg);
+}
+
+.buttons_wrap {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.choices{
+.choices {
   display: flex;
   justify-content: space-around;
   width: 100%;
   height: 100%;
+  margin: 8px;
 }
 
-.choice--btn{
+.choice--btn {
   background-color: #5b4cff;
   color: white;
   font-size: 15px;
@@ -40,5 +89,5 @@
   margin: 5px;
   text-align: center;
   padding: 10px;
-  box-shadow: 2px 2px 1px 1px rgba(51, 51, 52, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(51, 51, 52, 0.1);
 }
