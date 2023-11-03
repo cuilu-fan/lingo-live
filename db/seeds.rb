@@ -24,7 +24,7 @@ household = Category.create(name: "Household")
 User.destroy_all
 james = User.create!(user_name: "capten", first_name: "james", last_name: "smith", email: "james@gmail.com", password: "12345678")
 cuilu = User.create!(user_name: "lulu", first_name: "cuilu", last_name: "fan", email: "cuilu@example.com", password: "12345678" )
-shakar = User.create!(user_name: "legend", first_name: "shakar", last_name: "hassan", email: "shakar@example.com", password: "12345678" )
+shakar = User.create!(user_name: "False-Legend", first_name: "shakar", last_name: "hassan", email: "shakar@example.com", password: "12345678" )
 juan = User.create!(user_name: "juanma", first_name: "juan", last_name: "laborde", email: "juan@gmail.com", password: "12345678" )
 
 james.add_friend(cuilu)
