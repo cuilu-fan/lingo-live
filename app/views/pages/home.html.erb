@@ -3,7 +3,7 @@
     <h1>Hi <%= current_user.first_name.capitalize %>!</h1>
     <div class="flashcards--container">
       <div class="title-container">
-        <p class="block-title">Words today:</p>
+        <p class="block-title">Words for today:</p>
         <%# <div class="add"> %>
           <%= link_to new_user_flashcard_path, class: "add--button--container" do %>
             <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
@@ -28,7 +28,7 @@
     <%# <div class="new-div"> %>
       <%= link_to calls_path do %>
     <div class="btn-img-container">
-      <h2>Let's practice speaking!</h2>
+      <h3>Let's practice speaking!</h3>
       <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
     </div>
       <% end %>

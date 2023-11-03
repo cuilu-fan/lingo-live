@@ -20,8 +20,9 @@
   align-items: center;
 }
 
-.block.title {
+.block-title {
   width: 70%;
+  margin-left: 5px;
 }
 
 .flashcard-grid {
@@ -53,7 +54,7 @@
 .flashcard-front,
 .flashcard-back {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   list-style: none;
   border-radius: 8px;
   border: none;
