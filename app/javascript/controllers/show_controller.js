@@ -1,20 +1,32 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="show"
 export default class extends Controller {
-  static targets = ["showbuttonElement", "frontElement", "backElement", "reviewElement", "knownElement"]
+  static targets = [
+    "showbuttonElement",
+    "frontElement",
+    "backElement",
+    "reviewElement",
+    "knownElement",
+    "flashcard",
+  ];
   connect() {
-    console.log("hello")
-    console.log(this.frontElementTarget)
+    console.log("hello");
+    console.log(this.frontElementTarget);
   }
 
   reveal() {
     // Here: "show" button gone, two review options button shown
-    this.backElementTarget.classList.toggle("d-none")
-    this.showbuttonElementTarget.classList.toggle("d-none")
-    this.reviewElementTarget.classList.toggle("d-none")
-    this.knownElementTarget.classList.toggle("d-none")
+    // const card = this.flashcardTarget;
+    // const front = card.querySelector("primary-side");
+    // const back = card.querySelector("translated-side");
+    // front.classList.toggle("flashcard")
+    this.flashcardTarget.classList.toggle("flipcard");
+    // this.frontElementTarget.classList.toggle("d-none");
+    // this.backElementTarget.classList.toggle("d-none");
+    this.showbuttonElementTarget.classList.toggle("d-none");
+    this.reviewElementTarget.classList.toggle("d-none");
+    this.knownElementTarget.classList.toggle("d-none");
     // Here: two review options button gone, "show" button shown again
-
   }
 }
