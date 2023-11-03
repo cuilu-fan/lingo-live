@@ -1,5 +1,44 @@
-<h1>Search for Friends</h1>
-
-<% @users.each do |user| %>
-<li><%= user.first_name %></li>
-<% end %>
+<div class="search-friend-container">
+  <div class="elements-container row-search2">
+    <h1>Add your friends:</h1>
+    <div class="search-box-container">
+      <%= form_tag(friend_request_path, method: "get", id: "search-friend-form") do %>
+        <div class="form-group">
+          <%= text_field_tag :search, nil, placeholder: "Search for friends", class: "search-control" %>
+        </div>
+        <%= submit_tag "Search", class: "search-btn" %>
+      <% end %>
+    </div>
+    <div class="result-search-cont">
+      <% if @results.present? %>
+        <ul class="friend-result-list">
+          <% @results.each do |result| %>
+            <div class="column1-search">
+              <li> <%= image_tag("Avatar1.png", class: "avatar-search", alt: "user avatar") %> </li>
+            </div>
+            <div class="column2-search">
+              <div class="row-search">
+                <li><strong>Name:</strong> <%= result.first_name %></li>
+              </div>
+              <div class="row-search">
+                <li><strong>Nick:</strong> <%= result.user_name %></li>
+              </div>
+            </div>
+            <div class="column1-search">
+              <li><button class="add-user"><i class="fa-solid fa-user-plus"></i></li>
+            </div>
+      <% end %>
+        </ul>
+      <% elsif params[:search].present? %>
+        <p class="not-found-text">No results found.</p>
+      <% end %>
+    </div>
+    <div class="manage-request">
+      <p><strong>Review</strong> or <strong>accept</strong> your requests:</p>
+      <div class="btn-manage-friend-container">
+        <%= link_to 'Requested', '#', class: 'buttons-manage-request see-requested' %>
+        <%= link_to 'Pending', '#', class: 'buttons-manage-request see-pending' %>
+      </div>
+    </div>
+  </div>
+</div>
