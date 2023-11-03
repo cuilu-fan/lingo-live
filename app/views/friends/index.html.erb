@@ -16,7 +16,7 @@
           </div>
           <div class="friend-buttons">
           <% if friend.chatroom.nil?  %>
-            <%= button_to friend_chatrooms_path(friend), class: "text-button"  do %>
+            <%= button_to friend_chatrooms_path(friend), class: "text-button" do %>
               <i class="fas fa-comment"></i>
             <% end %>
           <% else %>

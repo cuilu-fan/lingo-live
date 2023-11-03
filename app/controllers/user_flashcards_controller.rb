@@ -1,3 +1,4 @@
+CONFIRM_SAVE = "The flashcard has been saved!🎉"
 class UserFlashcardsController < ApplicationController
   def new
     @user_flashcard = UserFlashcard.new
@@ -23,7 +24,7 @@ class UserFlashcardsController < ApplicationController
     @user_flashcard.translation = @translation
     @user_flashcard.user = current_user
     @user_flashcard.save
-    redirect_to new_user_flashcard_path
+    redirect_to new_user_flashcard_path, notice: CONFIRM_SAVE
   end
 
   def update

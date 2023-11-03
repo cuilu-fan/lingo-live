@@ -17,6 +17,10 @@ class FriendsController < ApplicationController
   end
 
   def friend_request
-    @users = User.all.reject { |user| user == current_user }
+    search_query = params[:search].to_s.strip
+    return if search_query == ""
+
+    @results = User.where("first_name ILIKE ? OR user_name ILIKE ? OR email ILIKE ?", "%#{search_query}%",
+                          "%#{search_query}%", "%#{search_query}%")
   end
 end

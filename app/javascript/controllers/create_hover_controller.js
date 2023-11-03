@@ -15,8 +15,10 @@ export default class extends Controller {
     "hiddenapitrans",
   ];
 
-  connect() {
-    console.log("hahaha", this.hiddencatTarget);
+  connect() {}
+
+  startPopup(e) {
+    this.togglePopup();
   }
 
   changeColor() {

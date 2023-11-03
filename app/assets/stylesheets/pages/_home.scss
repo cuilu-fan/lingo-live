@@ -6,12 +6,15 @@
 }
 
 .flashcard-grid {
+  background-color: #cfeeb8;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin-right: 5px;
   margin-left: 5px;
-  margin-top: 40px;
+  margin-top: 16px;
+  border-radius: 20px;
+  padding-top: 5px;
 }
 
 .flashcard-container {
@@ -36,13 +39,12 @@
   border: none;
   font-size: 20px;
   font-weight: bold;
-  background-color: #E7EDFF;
+  background-color: #e7edff;
   box-shadow: 3px 3px 1px 1px rgba(51, 51, 52, 0.1);
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.5s;
 }
-
 
 .flashcard-back {
   background-color: #1247e6;
@@ -99,7 +101,7 @@
   box-shadow: 6px 6px 1px 1px rgba(51, 51, 52, 0.1);
 }
 
-#simple_form_button input[type=submit] {
+#simple_form_button input[type="submit"] {
   // background-color:#5b4cff;
   // color: white;
   // font-size: 15px;
@@ -110,12 +112,86 @@
   // text-decoration: none;
   // text-align: center;
   // box-shadow: 6px 6px 1px 1px rgba(51, 51, 52, 0.1);
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   border: none;
   color: white;
   padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+}
 
+.new-div {
+  background-color: #ffbb3c;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 40px;
+  border-radius: 20px;
+  padding-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-div {
+  background-color: white;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+  position: relative;
+  border: 1px solid gray;
+  opacity: 0.8;
+}
+
+/* call sign animation */
+.inner-div::before {
+  content: "📱";
+  font-size: 60px;
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 40px);
+  animation: slideIn 2s ease-in-out infinite;
+}
+
+/* animation keyframes */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.center-text {
+  color: rgb(224, 32, 32);
+  display: flex;
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-weight: 900;
+}
+
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  margin-right: 4px;
 }
