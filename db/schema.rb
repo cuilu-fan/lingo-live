@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_01_140027) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_02_110541) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_01_140027) do
     t.bigint "random_user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "session_id", null: false
+    t.boolean "expired", default: false
     t.index ["caller_id"], name: "index_calls_on_caller_id"
     t.index ["random_user_id"], name: "index_calls_on_random_user_id"
   end
