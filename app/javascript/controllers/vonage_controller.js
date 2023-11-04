@@ -5,12 +5,23 @@ import { OT } from '@opentok/client';
 export default class extends Controller {
   connect() {
     this.apiKey = this.data.get("apiKey")
+    // debugger
     this.sessionId = this.data.get("sessionId")
     this.token = this.data.get("token")
     this.initializeSession()
   }
 
+  desconect() {
+    if (this.session) {
+      this.session.disconnect();
+    }
+  }
+
   initializeSession() {
+    console.log('OT:', OT); // Check if OT is defined
+    console.log('apiKey:', this.apiKey); // Check if apiKey is defined
+    console.log('sessionId:', this.sessionId);
+    
     this.session = OT.initSession(this.apiKey, this.sessionId);
     this.session.on("streamCreated", this.streamCreated.bind(this));
     this.publisher = OT.initPublisher(this.element, {

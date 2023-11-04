@@ -41,3 +41,4 @@ UserFlashcard.create(user: james, translation: stuhl, category: furniture)
 UserFlashcard.create(user: james, translation: apfel, category: food)
 UserFlashcard.create(user: james, translation: birne, category: food)
 UserFlashcard.create(user: james, translation: hund, category: animals)
+

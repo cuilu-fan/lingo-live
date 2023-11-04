@@ -3,13 +3,15 @@ class CallsController < ApplicationController
   end
 
   def show
-    opentok = OpenTok::OpenTok.new ENV.fetch('VONAGE_API_KEY', nil), ENV.fetch('VONAGE_API_SECRET', nil)
+    session = OpenTok::OpenTok.new ENV.fetch('VONAGE_API_KEY', nil), ENV.fetch('VONAGE_API_SECRET', nil)
     @call = Call.new
-    @token = opentok.generate_token @call.session_id, { name: current_user.first_name }
+    @call.session_id = session.create_session.session_id
+    @call.save
+    @token = session.generate_token(@call.session_id, { name: current_user.first_name })
   end
 
   def create
-    @call = Call.find(params[:call_id])
+    @call = Call.find(params[:id])
     @call.caller = current_user
     @call.random_user = User.except(current_user).sample
     @call.session_id = params[:session_id]
