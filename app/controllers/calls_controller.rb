@@ -1,5 +1,6 @@
 class CallsController < ApplicationController
-  def index
+  def new
+    @call = Call.new
   end
 
   def show
@@ -7,7 +8,7 @@ class CallsController < ApplicationController
     @call = Call.new
     @call.session_id = session.create_session.session_id
     @call.save
-    @token = session.generate_token(@call.session_id, { name: current_user.first_name })
+    @token = session.generate_token(@call.session_id)
   end
 
   def create
