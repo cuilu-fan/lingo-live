@@ -29,7 +29,7 @@ gem "jbuilder"
 
 gem 'pry-byebug'
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -48,6 +48,12 @@ gem "sassc-rails"
 
 gem 'deepl-rb', require: 'deepl'
 
+gem 'vonage'
+
+gem 'opentok'
+
+gem 'dotenv-rails'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -60,7 +66,6 @@ gem "simple_form", github: "heartcombo/simple_form"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
-  gem "dotenv-rails"
 end
 
 group :development do

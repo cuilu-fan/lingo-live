@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :user_flashcards, only: [:new, :create, :update, :destroy]
   post 'user_flashcards/translate', to: 'user_flashcards#translate', as: :translate
   resources :categories, except: [:destroy]
-  resources :calls, only: [ :index, :show ]
+  resources :calls, only: [ :index, :create ] do
+    collection do
+      get :random
+    end
+  end
+
   resources :friends, only: [:index, :new, :create] do
     resources :chatrooms, only: :create
   end

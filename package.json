@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@opentok/client": "^2.26.3"
+  }
+}

@@ -17,8 +17,12 @@
   <div class="call--button">
 
     <%= link_to 'Friends-call', friends_path, class: 'buttons friends-call' %>
-    <%= link_to 'Random-call', '#', class: 'buttons random-call' %>
 
+    <%= link_to 'Random-call', random_calls_path, class: 'buttons random-call' %>
+
+  </div>
+
+  <div data-controller="vonage"><u></u>
   </div>
 
 </div>

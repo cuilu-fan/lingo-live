@@ -20,6 +20,7 @@ class FriendsController < ApplicationController
     search_query = params[:search].to_s.strip
     return if search_query == ""
 
-    @results = User.where("first_name ILIKE ? OR user_name ILIKE ? OR email ILIKE ?", "%#{search_query}%", "%#{search_query}%", "%#{search_query}%")
+    @results = User.where("first_name ILIKE ? OR user_name ILIKE ? OR email ILIKE ?", "%#{search_query}%",
+                          "%#{search_query}%", "%#{search_query}%")
   end
 end
