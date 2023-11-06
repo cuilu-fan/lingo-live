@@ -22,13 +22,12 @@
 
 .practiced {
   margin: 10px 0 10px 0;
-  border-radius: 16px;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(#FCA401, 0.6);
-  border: 2px solid #FCA401;
+  // background-color: #ffbd59;
 }
 
 .call--button {
@@ -45,20 +44,19 @@
   align-items: center;
 }
 
-
-.random-call{
-height: fit-content;
-margin-left: 8px;
-text-decoration: none;
-display: flex;
-align-items: center;
+.random-call {
+  height: fit-content;
+  margin-left: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .buttons {
-  background-color: #5B4CFF;
+  background-color: #5b4cff;
   height: 40px;
   border: none;
-  border-radius: 16px;
+  border-radius: 25px;
   color: white;
   padding: 10px;
 }
