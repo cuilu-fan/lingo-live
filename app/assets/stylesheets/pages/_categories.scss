@@ -14,31 +14,39 @@
   text-align: center;
   overflow: hidden;
   height: 60px;
-  padding: 16px;
   margin-right: 16px;
   margin-left: 16px;
 }
 
 .category-title {
+  text-align: left;
   color: white;
   font-weight: bold;
   margin-right: 64px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  display: inline-block;
+  width: 120px;
+  padding: 24px;
 }
 
 .card-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   background-color: rgb(248, 248, 248);
   width: 32px;
   height: 32px;
 }
+
 .add {
   display: flex;
   justify-content: end;
   height: 40px;
   align-items: center;
-  padding: 8px;
+  padding: 24px;
+  position: sticky;
 }
 
 .add-button {

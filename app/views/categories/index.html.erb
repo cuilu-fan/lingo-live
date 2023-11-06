@@ -1,13 +1,12 @@
-<%=link_to new_user_flashcard_path, class:"add--button--container" do%>
+<%=link_to new_user_flashcard_path do%>
   <div class="add">
-    <%# <%=image_tag "footer_icons/add-button.png", class:"add-button"%>
       <i class="fa-solid fa-circle-plus fa-xl add-button" style="color: #5B4CFF;"></i>
   </div>
 <% end%>
 <div class="categories--container">
     <% @categories.each do |category| %>
   <div class="category">
-    <div><%=link_to category.name, category_path(category), class:"category-title" %></div>
+    <h3><%=link_to category.name, category_path(category), class:"category-title" %></h3>
     <div class="card-count"><%= category.user_flashcards.count %></div>
   </div>
     <% end %>
