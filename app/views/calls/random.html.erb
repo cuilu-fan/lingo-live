@@ -1,4 +1,5 @@
-<script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+<%= @call.id %>
+<%= current_user == @call.caller %>
 <div class="video-container">
   <div id="vonage-video"
       data-controller="vonage"
@@ -7,4 +8,5 @@
       data-vonage-token="<%= @token %>"
       data-vonage-name="<%= current_user.first_name%>">
   </div>
+  <%= button_to "next", next_call_path(@call), method: :patch %>
 </div>
