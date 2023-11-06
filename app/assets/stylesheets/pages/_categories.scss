@@ -22,12 +22,14 @@
 //   display: flex;
 //   justify-content: end;
 // }
-// .add {
-//   display: flex;
-//   justify-content: end;
-// }
+.add {
+  display: flex;
+  justify-content: end;
+  height: 40px;
+  align-items: center;
+}
 
 .add-button {
-  width: 30px;
-  margin: 15px;
+  width: 24px;
+  margin-right: 8px;
 }

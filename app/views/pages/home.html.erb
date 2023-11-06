@@ -6,7 +6,8 @@
         <p class="block-title">Words for today:</p>
         <%# <div class="add"> %>
           <%= link_to new_user_flashcard_path, class: "add--button--container" do %>
-            <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
+            <%# <%= image_tag "footer_icons/add-button.png", class: "add-button" %>
+            <i class="fa-solid fa-circle-plus fa-lg add-button" style="color: #a883ef;"></i>
           <% end %>
         <%# </div> %>
       </div>
@@ -28,7 +29,7 @@
     <%# <div class="new-div"> %>
       <%= link_to calls_path do %>
     <div class="btn-img-container">
-      <h3>Let's practice speaking!</h3>
+      <p class="block-title">Let's practice speaking!</p>
       <%= image_tag "Group27.png", class: "home-image", alt: "Home image" %>
     </div>
       <% end %>
