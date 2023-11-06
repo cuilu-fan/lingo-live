@@ -1,6 +1,4 @@
-import { Controller } from "@hotwired/stimulus"
-
-// Connects to data-controller="vonage"
+import { Controller } from "@hotwired/stimulus"// Connects to data-controller="vonage"
 export default class extends Controller {
   connect() {
     this.apiKey = this.data.get("apiKey");

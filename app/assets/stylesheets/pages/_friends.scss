@@ -50,18 +50,13 @@
 }
 
 .call-button{
-  border: 1px solid black;
   background: transparent;
   color: black;
-}
-
-.text-button {
-  border: 1px solid black;
-  background: transparent;
-  color: #5b4cff;
   text-decoration: none;
 }
 
-.text-button i, .call-button i {
-  padding: 4px;
+.text-button {
+  background: transparent;
+  color: #5b4cff;
+  text-decoration: none;
 }

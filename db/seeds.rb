@@ -27,6 +27,7 @@ cuilu = User.create!(user_name: "lulu", first_name: "cuilu", last_name: "fan", e
 shakar = User.create!(user_name: "False-Legend", first_name: "shakar", last_name: "hassan", email: "shakar@example.com", password: "12345678" )
 juan = User.create!(user_name: "juanma", first_name: "juan", last_name: "laborde", email: "juan@gmail.com", password: "12345678" )
 
+Call.create(caller: james, random_user: cuilu, duration: 10)
 james.add_friend(cuilu)
 james.add_friend(juan)
 cuilu.add_friend(juan)
@@ -41,4 +42,3 @@ UserFlashcard.create(user: james, translation: stuhl, category: furniture)
 UserFlashcard.create(user: james, translation: apfel, category: food)
 UserFlashcard.create(user: james, translation: birne, category: food)
 UserFlashcard.create(user: james, translation: hund, category: animals)
-
