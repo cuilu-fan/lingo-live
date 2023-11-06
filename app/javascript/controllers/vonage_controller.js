@@ -20,11 +20,12 @@ export default class extends Controller {
     this.publisher = OT.initPublisher(this.element, {
       insertMode: "append",
       width: "100%",
-      height: "50%",
+      height: "100%",
       name: this.data.get("name"),
     }, this.handleError.bind(this));
     this.session.connect(this.token,this.streamConnected.bind(this));
-    console.log("finish")
+    this.publisher.mirror = true;
+    console.log("publisher", this.publisher)
   }
 
   streamConnected(error) {
@@ -37,9 +38,10 @@ export default class extends Controller {
 
   streamCreated(event) {
     this.session.subscribe(event.stream, this.element, {
-      insertMode: "append",
+      insertMode: "replace",
       width: "100%",
-      height: "50%"
+      height: "100%",
+      mirror: false
     }, this.handleError.bind(this));
   }
   handleError(error) {
