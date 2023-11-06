@@ -1,25 +1,25 @@
-footer{
+footer {
   //border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(248, 248, 248);
   border-top: 0.4px solid lightgray;
-  height: 70px;
+  height: 66px;
   font-size: 0.6em;
 }
 
-.nav-icon{
+.nav-icon {
   height: 100%;
 }
 
-.photo-link{
+.photo-link {
   justify-content: center;
   align-items: center;
   height: 100%;
   margin-top: 0.5rem;
 }
 
-.home-photo{
+.home-photo {
   height: 50%;
   background-image: asset-url("footer_icons/home2.png");
   width: 40px;
@@ -28,7 +28,7 @@ footer{
   background-repeat: no-repeat;
 }
 
-.flashcard-photo{
+.flashcard-photo {
   height: 50%;
   background-image: asset-url("footer_icons/003-translation.png");
   width: 40px;
@@ -36,7 +36,7 @@ footer{
   background-size: cover;
 }
 
-.review-photo{
+.review-photo {
   height: 50%;
   background-image: asset-url("footer_icons/001-flash-cards.png");
   width: 40px;
@@ -45,7 +45,7 @@ footer{
   background-repeat: no-repeat;
 }
 
-.video-photo{
+.video-photo {
   height: 50%;
   background-image: asset-url("footer_icons/002-live-chat.png");
   width: 40px;
@@ -53,14 +53,14 @@ footer{
   background-size: 60%;
   background-repeat: no-repeat;
 }
-.footer-text{
+.footer-text {
   color: black;
   text-decoration: none;
   // font-size: x-small;
 }
 
 .activated {
-  background-color: #5b4cff;
+  background-color: #ffde59;
   opacity: 0.8;
   color: white;
   font-size: 5px;
@@ -68,5 +68,4 @@ footer{
   border: none;
   margin: 5px;
   padding: 20px;
-  border: 1px solid gray;
 }
