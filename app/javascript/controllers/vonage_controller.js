@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"// Connects to data-controller="vonage"
+import  OT  from "@opentok/client";
 export default class extends Controller {
   connect() {
     this.apiKey = this.data.get("apiKey");
@@ -24,7 +25,6 @@ export default class extends Controller {
       name: this.data.get("name"),
     }, this.handleError.bind(this));
     this.session.connect(this.token,this.streamConnected.bind(this));
-    this.publisher.mirror = true;
     console.log("publisher", this.publisher)
   }
 
@@ -38,10 +38,9 @@ export default class extends Controller {
 
   streamCreated(event) {
     this.session.subscribe(event.stream, this.element, {
-      insertMode: "replace",
+      insertMode: "append",
       width: "100%",
       height: "100%",
-      mirror: false
     }, this.handleError.bind(this));
   }
   handleError(error) {

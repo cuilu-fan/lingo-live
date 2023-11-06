@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get :random
     end
+    member do
+      patch :next
+    end
   end
 
   resources :friends, only: [:index, :new, :create] do
