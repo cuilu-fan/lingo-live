@@ -7,11 +7,4 @@
       data-vonage-token="<%= @token %>"
       data-vonage-name="<%= current_user.first_name%>">
   </div>
-  <div id="vonage-video2"
-  data-controller="vonage"
-      data-vonage-api-key="<%= ENV.fetch('VONAGE_API_KEY', nil) %>"
-      data-vonage-session-id="<%= @call.session_id %>"
-      data-vonage-token="<%= @token %>"
-      data-vonage-name="<%= current_user.first_name%>">
-  </div>
 </div>
