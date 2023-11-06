@@ -18,6 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
 }
 
 .block-title {
@@ -90,6 +91,11 @@
   flex-direction: column;
   align-items: center;
   margin-top: 25px;
+  background-color: #ffbd59;
+}
+
+.home-image {
+  width: 50%;
 }
 
 .home-btn {
