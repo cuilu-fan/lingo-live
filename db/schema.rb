@@ -16,8 +16,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_02_110541) do
 
   create_table "calls", force: :cascade do |t|
     t.integer "duration"
-    t.bigint "caller_id", null: false
-    t.bigint "random_user_id", null: false
+    t.bigint "caller_id"
+    t.bigint "random_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "session_id", null: false
