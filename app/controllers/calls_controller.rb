@@ -2,7 +2,7 @@ class CallsController < ApplicationController
   def index
   end
 
-  def random
+  def random # rubocop:disable Metrics/MethodLength
     opentok = OpenTok::OpenTok.new ENV.fetch('VONAGE_API_KEY', nil), ENV.fetch('VONAGE_API_SECRET', nil)
     waiting_call = Call.where(random_user: nil).where.not(caller: current_user, id: params[:old_call_ids]).first || Call.where(caller: nil).where.not(random_user: current_user, id: params[:old_call_ids]).first # rubocop:disable Layout/LineLength
     if waiting_call
