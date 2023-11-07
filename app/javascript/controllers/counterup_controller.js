@@ -9,6 +9,8 @@ export default class extends Controller {
     console.log(this.element);
     this.options = { duration: 10 };
     this.countup = new CountUp(this.practiceTarget, 66, this.options);
-    this.count2 = this.countup.start();
+    this.count2 = new CountUp(this.callTarget, 36, this.options);
+    this.countup.start();
+    this.count2.start();
   }
 }

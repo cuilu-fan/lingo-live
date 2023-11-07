@@ -26,6 +26,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 168px;
 }
 
 .chatted {
@@ -33,11 +34,11 @@
   // background-size: cover;
   // height: 200px;
   // width: 200px;
-  margin: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 168px;
 }
 
 .call--button {
@@ -78,4 +79,5 @@
   font-weight: 600;
   align-items: center;
   justify-content: center;
+  height: 50px;
 }

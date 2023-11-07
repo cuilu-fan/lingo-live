@@ -1,24 +1,17 @@
 <div class="call-index" data-controller="counterup">
-
-
-
   <div class="practiced">
-    <h4>You are doing great!</h4>
     <p data-counterup-target="practice"></p>
     <p>Hours of calls!</p>
     <%=render "calls/trophy_picture"%>
   </div>
 
   <div class="chatted">
-    <p>you have chatted with: </p>
-    <p data-counterup-target="call">50 people </p>
-    <%= image_tag "friend_chat.png", alt: "background picture", width: 200, height: 160%>
-
-
+    <p data-counterup-target="call"></p>
+    <p> language buddies! </p>
+    <%= image_tag "friend_chat.png", alt: "background picture", width: 200, height: 150%>
   </div>
 
   <div class="text">
-    <p>Great that you enjoyed!</p>
     <p> Start a chat today!</p>
   </div>
 
