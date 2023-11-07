@@ -8,9 +8,11 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     flashcards = UserFlashcard.flashcards_to_review(current_user, @category)
     if flashcards.empty?
-      reset_review_deck
       redirect_to categories_path, notice: SUCCESS_MESSAGE
+      reset_review_deck
     end
+
+
     @flashcard = flashcards.first
   end
 
@@ -19,7 +21,7 @@ class CategoriesController < ApplicationController
   def reset_review_deck
     UserFlashcard.where(user: current_user, category: @category, known: true)
                  .map do |known_flashcard|
-      known_flashcard.known = false
+      known_flashcard.known = !known_flashcard.known
       known_flashcard.save!
     end
   end
