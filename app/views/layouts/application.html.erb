@@ -16,12 +16,20 @@
   </head>
   <body>
     <div class="page--fixed--container">
-      <%= render "shared/navbar" if user_signed_in? %>
+      <% if content_for :navbar %>
+        <%= yield :navbar %>
+      <% else %>
+        <%= render "shared/navbar" if user_signed_in? %>
+      <% end %>
       <%= render "shared/flashes" %>
-      <div class="page--scroll--container <%= @freeze_screen ? "chatroom--disable--scroll" : nil %>">
+      <div class="page--scroll--container <%= "page--scroll--container--padded" unless @hide_padding %> <%= @freeze_screen ? "chatroom--disable--scroll" : nil %>">
         <%= yield %>
       </div>
+      <% if content_for :footer %>
+      <%= yield :footer %>
+      <% else %>
       <%= render "shared/footer" if user_signed_in? %>
+      <% end %>
     </div>
   </body>
 </html>

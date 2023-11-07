@@ -11,11 +11,33 @@
   height: 100%;
   z-index: 0;
   position: relative;
+  border: 2px solid black;
 }
+
 .OT_root:nth-of-type(2) {
   position:absolute !important;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 15px;
   width: 30% !important;
-  height: 20% !important;
+  height: 30% !important;
+  border: 2px solid red;
+  border-radius: 16px;
+}
+.next{
+  background-color: #FCA401;
+  border-color: none;
+  position: absolute;
+  bottom: 20%;
+  right: 15px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+.end{
+  position: absolute;
+  bottom: 10%;
+  right: 50%;
+  left: 50%;
 }

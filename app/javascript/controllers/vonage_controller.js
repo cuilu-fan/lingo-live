@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"// Connects to data-controller="vonage"
-import  OT  from "@opentok/client";
+import OT  from "@opentok/client";
 export default class extends Controller {
   connect() {
     this.apiKey = this.data.get("apiKey");
