@@ -1,6 +1,6 @@
 <div class="container chatroom"  data-controller="chatroom-subscriptions"
   data-chatroom-subscriptions-chatroom-id-value="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
-  <h1><%= @chatroom.friend(current_user).first_name %></h1>
+  <h1><%= @chatroom.friend(current_user).first_name.capitalize %></h1>
   <div class="messages" data-chatroom-subscriptions-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender_id == current_user.id ? 'justify-content-end' : 'justify-content-start' %>">
@@ -16,8 +16,8 @@
     <%= f.input :text,
     label: false,
     placeholder: " Send a Message",
-    wrapper_html: {class: "flex-grow-1"}
+    wrapper_html: {class: "flex-grow-1 text-area"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3 send" %>
   <% end %>
 </div>
