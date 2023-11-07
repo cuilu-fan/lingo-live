@@ -28,6 +28,18 @@
   flex-direction: column;
 }
 
+.chatted {
+  // background-image: asset-url("friend_chat.png");
+  // background-size: cover;
+  // height: 200px;
+  // width: 200px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .call--button {
   display: flex;
   justify-content: center;

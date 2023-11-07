@@ -3,7 +3,7 @@ import { CountUp } from "countup.js";
 
 // Connects to data-controller="counterup"
 export default class extends Controller {
-  static targets = ["practice"];
+  static targets = ["practice", "call"];
 
   connect() {
     console.log(this.element);
