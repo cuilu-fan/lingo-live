@@ -23,21 +23,80 @@
   border: 2px solid red;
   border-radius: 16px;
 }
-.next{
-  background-color: #FCA401;
-  border-color: none;
+
+.next--button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: 8%;
+  bottom: 20px;
   position: absolute;
-  bottom: 20%;
-  right: 15px;
-  box-shadow: none;
-  border: none;
-  outline: none;
-  border-radius: 8px;
+  text-align: center;
 }
 
-.end{
-  position: absolute;
-  bottom: 10%;
-  right: 50%;
-  left: 50%;
+.flash-button {
+  background-color: #5b4cff;
+  color: white;
+  font-size: 12px;
+  width: auto;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.end {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  color: white;
+}
+
+.next {
+  background-color: #5b4cff;
+  color: white;
+  font-size: 12px;
+  width: auto;
+  height: 40px;
+  border-radius: 50px;
+  border: none;
+  margin: 5px;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 14px;
+}
+
+/*----- FLASHCARD SECTION -----*/
+.flashcard-review-call {
+  color: white;
+  border-radius: 25px;
+  background-color: #FCA401;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.modal-dialog {
+  width: 50%;
+  float: right;
+  margin-top: 70%;
+}
+
+.add-friend-button {
+  color: white;
+  background-color: #FCA401;
+  margin-top: -390%;
+  font-size: 18px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -5%;
 }
