@@ -1,6 +1,6 @@
 .friends-container {
-  display: grid;
-  border-radius: 8px;
+  // display: grid;
+  border-radius: 16px;
   justify-content: center;
   margin-top: 15px;
   height: 100%;
@@ -21,42 +21,47 @@
 }
 
 .friends-list {
-  list-style: none;
-  margin-top: 4rem;
-  margin-right: 30px;
+  margin: 4rem 12px;
 }
 
 .inline-layout > div {
   display: inline-block;
   vertical-align: middle;
-  padding: 25px 5px 25px 5px;
+  padding: 20px 4px;
+  width: 23%;
 }
 
-.inline-layout > div:nth-child(2) p, .inline-layout > div:nth-child(3) p {
+.inline-layout > div:nth-child(2) p,
+.inline-layout > div:nth-child(3) p {
   padding-top: 15px;
   font-weight: bold;
 }
 
 .friend-information {
-  border-radius: 25px;
-  background-color: rgba(#FCA401, 0.6);
+  border-radius: 16px;
+  background-color: rgba(#fca401, 0.6);
   margin-bottom: 1rem;
 }
 
-.text-button, .call-button {
+.friend-name {
+  font-size: 20px;
+}
+
+.text-button,
+.call-button {
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 24px;
   border: none;
 }
 
-.call-button{
+.call-button {
   background: transparent;
-  color: black;
+  color: green;
   text-decoration: none;
 }
 
 .text-button {
   background: transparent;
-  color: #5b4cff;
+  color: #e7edff;
   text-decoration: none;
 }

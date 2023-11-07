@@ -38,8 +38,8 @@ shakar.add_friend(cuilu)
 cuilu.add_friend(shakar)
 
 
-UserFlashcard.create(user: james, translation: tisch, category: furniture)
-UserFlashcard.create(user: james, translation: stuhl, category: furniture)
-UserFlashcard.create(user: james, translation: apfel, category: food)
-UserFlashcard.create(user: james, translation: birne, category: food)
-UserFlashcard.create(user: james, translation: hund, category: animals)
+# UserFlashcard.create(user: james, translation: tisch, category: furniture)
+# UserFlashcard.create(user: james, translation: stuhl, category: furniture)
+# UserFlashcard.create(user: james, translation: apfel, category: food)
+# UserFlashcard.create(user: james, translation: birne, category: food)
+# UserFlashcard.create(user: james, translation: hund, category: animals)

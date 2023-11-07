@@ -1,6 +1,6 @@
 <div class="friends-container">
 
-  <ul class= "friends-list">
+  <div class= "friends-list">
 
     <% displayed_users = Set.new %>
 
@@ -9,38 +9,33 @@
       <% other_user = friend.user_1 == current_user ? friend.user_2 : friend.user_1 %>
       <% unless displayed_users.include?(other_user.id) %>
 
-        <li class="friend-information inline-layout" >
+        <div class="friend-information inline-layout" >
           <div>
-            <%= image_tag("leonardo.png", class: "avatar", alt: "user avatar") %>
+            <%= image_tag("avatar_boy2.png", class: "avatar", alt: "user avatar") %>
           </div>
 
           <div class="friend-info">
-            <p><%= other_user.first_name %></p>
+            <p class="friend-name"><%= other_user.first_name.capitalize %></p>
           </div>
 
           <div class="friend-rate">
             <p>4.5 <i class="fas fa-star"></i></p>
           </div>
-
           <div class="friend-buttons">
             <% if friend.chatroom.nil?  %>
               <%= button_to friend_chatrooms_path(friend), class: "text-button" do %>
                 <i class="fas fa-comment"></i>
               <% end %>
-
             <% else %>
               <%= link_to chatroom_path(friend.chatroom), class: "text-button" do %>
                 <i class="fas fa-comment"></i>
               <% end %>
-
             <% end %>
               <button class="call-button"><i class="fas fa-phone"></i></button>
           </div>
-        </li>
+        </div>
         <% displayed_users.add(other_user.id) %>
-
       <% end %>
-
     <% end %>
-  </ul>
+  </div>
 </div>
