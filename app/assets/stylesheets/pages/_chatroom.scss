@@ -1,7 +1,7 @@
-  .chatroom--disable--scroll {
-    overflow: hidden;
-    display: flex;
-  }
+.chatroom--disable--scroll {
+  overflow: hidden;
+  display: flex;
+}
 
 .chatroom {
   background: white;
@@ -10,6 +10,7 @@
   justify-content: space-between;
   flex: 1;
   overflow: hidden;
+  border-radius: 16px;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -27,18 +28,19 @@
     padding: 8px;
   }
 
-  .sender-style, .receiver-style {
+  .sender-style,
+  .receiver-style {
     width: 70%;
     max-width: 400px;
     border-radius: 15px;
     padding: 10px;
     min-height: 60px;
     position: relative;
-   
   }
 
-  .sender-style:after, .receiver-style:before {
-    content: '';
+  .sender-style:after,
+  .receiver-style:before {
+    content: "";
     position: absolute;
     width: 0;
     height: 0;
@@ -47,7 +49,7 @@
 
   .sender-style:after {
     border-width: 0 0 20px 20px;
-    border-color: transparent transparent transparent #FCA401;
+    border-color: transparent transparent transparent #fca401;
     right: -10px;
     top: 40%;
     transform: translateY(-50%);
@@ -56,7 +58,7 @@
 
   .receiver-style:before {
     border-width: 0 20px 20px 0;
-    border-color: transparent #E7EDFF transparent transparent;
+    border-color: transparent #e7edff transparent transparent;
     left: -10px;
     top: 40%;
     transform: translateY(-50%);
@@ -69,11 +71,11 @@
   }
 
   .sender-style {
-    background-color: #FCA401;
+    background-color: #fca401;
   }
 
   .receiver-style {
-    background-color: #E7EDFF;
+    background-color: #e7edff;
   }
 
   #new_message {
@@ -84,4 +86,28 @@
       margin-bottom: 0;
     }
   }
+}
+
+.chatroom::before {
+  content: "";
+  background: url(background_pic1.png), url(background_pic2.png);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#message_text {
+  width: 130%;
+  border-radius: 25px;
+  border: none;
+}
+
+.send {
+  border-radius: 25px;
 }

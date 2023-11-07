@@ -42,8 +42,8 @@
 }
 
 .search-btn {
-  right: 3px;
-  top: 3px;
+  right: 0px;
+  top: 0px;
   bottom: 3px;
   border: 0;
   background: #5b4cff;
@@ -54,6 +54,7 @@
   border-radius: 100px;
   position: absolute;
   z-index: 2;
+  height: 42px;
 }
 
 /* ----- CONTAINER SEARCH RESULT ----- */
@@ -108,13 +109,12 @@
 }
 
 .add-user {
-  border: 1px solid black;
+  border: none;
   background: transparent;
   color: black;
   font-size: 18px;
   height: 35px;
   width: 35px;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
