@@ -12,12 +12,18 @@
       </div>
     <% end %>
   </div>
-  <%= simple_form_for [@chatroom, @message], html: {class: "d-flex", data: {action: "turbo:submit-end->chatroom-subscriptions#resetForm"}} do |f|%>
-    <%= f.input :text,
-    label: false,
-    placeholder: " Send a Message",
-    wrapper_html: {class: "flex-grow-1 text-area"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3 send" %>
-  <% end %>
+  <div>
+    <%= simple_form_for [@chatroom, @message], html: {class: "d-flex", data: {action: "turbo:submit-end->chatroom-subscriptions#resetForm"}} do |f|%>
+      <div>
+        <%= f.input :text,
+        label: false,
+        placeholder: " Send a Message",
+        wrapper_html: {class: "flex-grow-1 text-area"}
+        %>
+      </div>
+      <div>
+        <%= f.submit "Send", class: "btn btn-primary mb-3 send" %>
+      </div>
+    <% end %>
+  </div>
 </div>
