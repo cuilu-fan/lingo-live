@@ -12,7 +12,6 @@ class CategoriesController < ApplicationController
       reset_review_deck
     end
 
-
     @flashcard = flashcards.first
   end
 
