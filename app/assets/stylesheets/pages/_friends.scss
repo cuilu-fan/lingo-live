@@ -21,14 +21,14 @@
 }
 
 .friends-list {
-  margin: 4rem 16px;
+  margin: 4rem 12px;
 }
 
 .inline-layout > div {
   display: inline-block;
   vertical-align: middle;
-  padding: 25px 5px 25px 5px;
-  width: 24%;
+  padding: 20px 4px;
+  width: 23%;
 }
 
 .inline-layout > div:nth-child(2) p,
@@ -44,7 +44,7 @@
 }
 
 .friend-name {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .text-button,

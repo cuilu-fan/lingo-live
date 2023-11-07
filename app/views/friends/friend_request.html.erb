@@ -1,6 +1,6 @@
 <div class="search-friend-container">
   <div class="elements-container row-search2">
-    <h1>Add your friends:</h1>
+    <h2>Find your friends</h2>
     <div class="search-box-container">
       <%= form_tag(friend_request_path, method: "get", id: "search-friend-form") do %>
         <div class="form-group">
@@ -18,7 +18,7 @@
             </div>
             <div class="column2-search">
               <div class="row-search">
-                <li><strong>Name:</strong> <%= result.first_name %></li>
+                <li><strong>Name:</strong> <%= result.first_name.capitalize %></li>
               </div>
               <div class="row-search">
                 <li><strong>Nick:</strong> <%= result.user_name %></li>
@@ -36,7 +36,7 @@
     <div class="manage-request">
       <p><strong>Review</strong> or <strong>accept</strong> your requests:</p>
       <div class="btn-manage-friend-container">
-        <%= link_to 'Requested', '#', class: 'buttons-manage-request see-requested' %>
+        <%# <%= link_to 'Requested', '#', class: 'buttons-manage-request see-requested' %>
         <%= link_to 'Pending', '#', class: 'buttons-manage-request see-pending' %>
       </div>
     </div>

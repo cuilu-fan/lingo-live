@@ -1,5 +1,6 @@
 /* ----- CONTAINER PRINCIPAL ----- */
 .search-friend-container {
+  margin-top: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,11 +10,13 @@
 
 .search-friend-container::before {
   content: "";
-  background: url(Group27.png);
-  background-repeat: no-repeat;
-  background-position: center bottom;
+  background: url(background_pic1.png), url(background_pic2.png);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, no-repeat;
   opacity: 0.4;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -36,7 +39,6 @@
   padding: 10px 50px 10px 20px;
   line-height: 1;
   box-sizing: border-box;
-
 }
 
 .search-btn {
@@ -52,17 +54,16 @@
   border-radius: 100px;
   position: absolute;
   z-index: 2;
-
 }
 
 /* ----- CONTAINER SEARCH RESULT ----- */
 .result-search-cont {
-  width: 100%
+  width: 100%;
 }
 
 .friend-result-list {
   margin-top: 20px;
-  background-color: rgba(#FCA401, 0.6);
+  background-color: rgba(#fca401, 0.6);
   border-radius: 50px;
   list-style: none;
   display: flex;
@@ -146,7 +147,8 @@
   justify-content: center;
 }
 
-.see-requested, .see-pending {
+.see-requested,
+.see-pending {
   height: fit-content;
   margin-right: 8px;
   padding: 8px 8px;
@@ -156,7 +158,7 @@
 }
 
 .buttons-manage-request {
-  background-color: #5B4CFF;
+  background-color: #5b4cff;
   height: 40px;
   border: none;
   border-radius: 50px;
