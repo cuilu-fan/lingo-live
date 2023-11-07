@@ -1,7 +1,7 @@
 SUCCESS_MESSAGE = "Amazing! You have successfully remembered all the words in this category!🚀"
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.joins(:user_flashcards).uniq
+    @categories = current_user.categories.joins(:user_flashcards).uniq
   end
 
   def show
@@ -11,7 +11,6 @@ class CategoriesController < ApplicationController
       redirect_to categories_path, notice: SUCCESS_MESSAGE
       reset_review_deck
     end
-
 
     @flashcard = flashcards.first
   end
