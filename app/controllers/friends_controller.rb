@@ -15,7 +15,7 @@ class FriendsController < ApplicationController
     @friend.user_1 = current_user
     @friend.user_2 = User.find(params[:friend])
     @friend.save
-    redirect_to  friend_request_path
+    redirect_to friend_request_path
   end
 
   def accept
