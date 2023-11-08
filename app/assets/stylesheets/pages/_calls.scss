@@ -56,7 +56,11 @@
 }
 
 .friends-call {
-  height: fit-content;
+  background-color: rgba(#53c7df, 0.9);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 22px;
   margin-right: 8px;
   text-decoration: none;
   display: flex;
@@ -64,16 +68,11 @@
 }
 
 .random-call {
-  height: fit-content;
   margin-left: 8px;
   text-decoration: none;
   display: flex;
   align-items: center;
-}
-
-.buttons {
-  background-color: #5b4cff;
-  height: 40px;
+  background-color: rgba(#5b4cff, 0.9);
   border: none;
   border-radius: 25px;
   color: white;

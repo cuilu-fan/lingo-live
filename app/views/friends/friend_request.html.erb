@@ -16,7 +16,7 @@
         <ul class="friend-result-list">
           <% @results.each do |result| %>
             <div class="column1-search">
-              <li> <%= image_tag("Avatar1.png", class: "avatar-search", alt: "user avatar") %> </li>
+              <i class="fa-regular fa-user fa-2xl"></i>
             </div>
             <div class="column2-search">
               <div class="row-search">
@@ -38,12 +38,12 @@
       <% end %>
     </div>
     <div class="pending-container">
-      <p><strong>Review</strong> or <strong>accept</strong> your requests:</p>
+      <p><strong>You have recieved friends requests:<strong></p>
       <% @friend_requests.each do |friend_request| %>
         <div class="pending-list">
           <% if current_user == friend_request.user_1 %>
             <div class="column1-search">
-              <%= image_tag("Avatar1.png", class: "avatar-search2", alt: "user avatar") %>
+              <i class="fa-regular fa-user fa-2xl"></i>
             </div>
             <div class="column2-search">
               <div class="row-search">
@@ -54,13 +54,15 @@
               </div>
             </div>
             <div class="column1-search">
-              <%= link_to accept_friend_path(friend_request), data: {turbo_method: :patch} do %>
-                  <li><button class="add-user"><i class="fa-solid fa-check fa-lg icon-color"></i></li>
+              <% unless friend_request.user_1 == current_user  %>
+                <%= link_to accept_friend_path(friend_request), data: {turbo_method: :patch} do %>
+                    <li><button class="add-user"><i class="fa-solid fa-check fa-lg icon-color"></i></li>
+                  <% end %>
                 <% end %>
             </div>
             <% elsif current_user == friend_request.user_2 %>
               <div class="column1-search">
-                <%= image_tag("Avatar1.png", class: "avatar-search2", alt: "user avatar") %>
+                <i class="fa-regular fa-user fa-2xl"></i>
               </div>
               <div class="column2-search">
                 <div class="row-search">
@@ -72,7 +74,7 @@
               </div>
               <div class="column1-search">
                 <%= link_to accept_friend_path(friend_request), data: {turbo_method: :patch} do %>
-                  <li><button class="add-user"><i class="fa-solid fa-check fa-lg icon-color"></i></i></li>
+                  <li><button class="add-user"> <i class="fa-solid fa-plus fa-lg add-button" style="color: #fcfdff;"></i></li>
                 <% end %>
               </div>
           <% end %>
