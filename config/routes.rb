@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :friends, only: [:index, :new, :create] do
     resources :chatrooms, only: :create
+    member do
+      patch :accept
+    end
   end
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]

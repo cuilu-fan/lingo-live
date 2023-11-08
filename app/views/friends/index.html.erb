@@ -4,7 +4,7 @@
 
     <% displayed_users = Set.new %>
 
-    <% current_user.friends.each do |friend| %>
+    <% @friends.each do |friend| %>
 
       <% other_user = friend.user_1 == current_user ? friend.user_2 : friend.user_1 %>
       <% unless displayed_users.include?(other_user.id) %>

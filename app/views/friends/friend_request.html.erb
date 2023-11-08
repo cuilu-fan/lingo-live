@@ -25,7 +25,9 @@
               </div>
             </div>
             <div class="column1-search">
+            <%= link_to friends_path(friend: result ), data: {turbo_method: :post} do %>
               <li><button class="add-user"><i class="fa-solid fa-user-plus"></i></li>
+              <% end %>
             </div>
       <% end %>
         </ul>
@@ -39,6 +41,19 @@
         <%# <%= link_to 'Requested', '#', class: 'buttons-manage-request see-requested' %>
         <%= link_to 'Pending', '#', class: 'buttons-manage-request see-pending' %>
       </div>
+      <% @friend_requests.each do |friend_request| %>
+
+      <% if current_user == friend_request.user_1 %>
+          <h3><%= friend_request.user_2.first_name %></h3>
+          <h3><%= friend_request.status %></h3>
+          <%= link_to "accept", accept_friend_path(friend_request), data: {turbo_method: :patch} %>
+        <% elsif current_user == friend_request.user_2 %>
+          <h3><%= friend_request.user_1.first_name %></h3>
+          <h3><%= friend_request.status %></h3>
+          <%= link_to "accept", accept_friend_path(friend_request), data: {turbo_method: :patch} %>
+        <% end %>
+   
+      <% end %>
     </div>
   </div>
 </div>

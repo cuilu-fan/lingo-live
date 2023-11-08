@@ -15,8 +15,8 @@ data-call-subscriptions-user-id-value="<%= current_user.id %>">
       data-vonage-token="<%= @token %>"
       data-vonage-name="<%= current_user.first_name%>">
   </div>
-     <%   @flashcards.each do |flashcard| %>
-      <%= flashcard.primary_language_word %> <%= flashcard.target_language_word %>
+      <%   @flashcards.each do |flashcard| %>
+        <%= flashcard.primary_language_word %> <%= flashcard.target_language_word %>
       <% end %>
       <div class="next--button">
         <div>

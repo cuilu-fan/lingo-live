@@ -1,6 +1,6 @@
 class FriendsController < ApplicationController
   def index
-    @friends = Friend.all
+    @friends = current_user.friends.where(status: "accepted")
   end
 
   def new
@@ -11,12 +11,21 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = User.find(params[:id])
-    @friends = current_user.friends << friend
-    redirect_to friend_path, notice: "#{friend.username} is now your friend."
+    @friend = Friend.new
+    @friend.user_1 = current_user
+    @friend.user_2 = User.find(params[:friend])
+    @friend.save
+    redirect_to friends_path
+  end
+
+  def accept
+    @friend = Friend.find(params[:id])
+    @friend.update(status: "accepted")
+    redirect_to friends_path
   end
 
   def friend_request
+    @friend_requests = current_user.friends.where(status: "pending")
     search_query = params[:search].to_s.strip
     return if search_query == ""
 
