@@ -5,25 +5,39 @@
   <div class="blank"></div>
 <% end %>
 <%= @call.id %>
-<div class="video-container" data-controller="call-subscriptions"
-data-call-subscriptions-call-id-value="<%= @call.id %>"
-data-call-subscriptions-user-id-value="<%= current_user.id %>">
-  <div id="vonage-video"
-      data-controller="vonage"
-      data-vonage-api-key="<%= ENV.fetch('VONAGE_API_KEY', nil) %>"
-      data-vonage-session-id="<%= @call.session_id %>"
-      data-vonage-token="<%= @token %>"
-      data-vonage-name="<%= current_user.first_name%>">
-  </div>
-      <%   @flashcards.each do |flashcard| %>
-        <%= flashcard.primary_language_word %> <%= flashcard.target_language_word %>
-      <% end %>
-      <div class="next--button">
+  <div class="video-container" data-controller="call-subscriptions"
+      data-call-subscriptions-call-id-value="<%= @call.id %>"
+      data-call-subscriptions-user-id-value="<%= current_user.id %>">
+    <div id="vonage-video"
+        data-controller="vonage"
+        data-vonage-api-key="<%= ENV.fetch('VONAGE_API_KEY', nil) %>"
+        data-vonage-session-id="<%= @call.session_id %>"
+        data-vonage-token="<%= @token %>"
+        data-vonage-name="<%= current_user.first_name%>">
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div>
-          <%= button_to "next", next_call_path(@call, old_call_ids: params[:old_call_ids]), class: "next", method: :patch %>
+          <div class="modal-body">
+            <%   @flashcards.each do |flashcard| %>
+              <div class="flashcard-review-call">
+                <%= flashcard.primary_language_word %> - <%= flashcard.target_language_word %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="next--button">
+      <div class="add-friend-button"><i class="fa-solid fa-user-plus"></i></div>
+      <button type="button" class="flash-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Flashcards
+      </button>
       <%= link_to call_path(@call), class: "end", data: {turbo_method: :delete } do%>
-      <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #E33731;"></i>
+        <i class="fa-solid fa-circle-xmark fa-2xl" style="color: #E33731;"></i>
       <% end %>
-</div>
+      <div>
+        <%= button_to "Next", next_call_path(@call, old_call_ids: params[:old_call_ids]), class: "next", method: :patch %>
+      </div>
+    </div>
+  </div>

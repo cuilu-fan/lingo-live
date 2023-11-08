@@ -22,12 +22,23 @@
 
 .practiced {
   margin: 10px 0 10px 0;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // background-color: #ffbd59;
+  height: 168px;
+}
+
+.chatted {
+  // background-image: asset-url("friend_chat.png");
+  // background-size: cover;
+  // height: 200px;
+  // width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 168px;
 }
 
 .call--button {
@@ -68,4 +79,5 @@
   font-weight: 600;
   align-items: center;
   justify-content: center;
+  height: 50px;
 }
