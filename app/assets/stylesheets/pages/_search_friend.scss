@@ -64,7 +64,8 @@
 
 .friend-result-list {
   margin-top: 20px;
-  background-color:#fca401;
+  background-color: rgba(#fca401, 0.9);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   list-style: none;
   display: flex;
@@ -173,7 +174,8 @@
 
 .pending-list {
   margin-top: 20px;
-  background-color:#fca401;
+  background-color: rgba(#fca401, 0.9);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   list-style: none;
   display: flex;
