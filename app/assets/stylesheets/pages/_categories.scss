@@ -59,6 +59,13 @@
   height: 32px;
 }
 
+.add--button--container {
+  width: 80%;
+  margin: 0 16px;
+  padding-top: 16px;
+  border-top: lightgrey 1px solid;
+}
+
 .add {
   display: flex;
   justify-content: center;
@@ -66,7 +73,10 @@
   height: 80px;
   align-items: center;
   position: sticky;
-  background-color: rgb(248, 248, 248);
+  // background-color: rgb(248, 248, 248);
+  background-color: rgba(#5b4cff, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
 }
 
 .add-button {

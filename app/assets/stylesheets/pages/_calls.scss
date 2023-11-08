@@ -4,6 +4,7 @@
   justify-content: center;
   margin-top: 15px;
   height: 100%;
+  padding: 32px;
 }
 
 .call-index::before {
@@ -21,24 +22,31 @@
 }
 
 .practiced {
-  margin: 10px 0 10px 0;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 168px;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 6px;
+  backdrop-filter: blur(10px);
 }
 
 .chatted {
-  // background-image: asset-url("friend_chat.png");
-  // background-size: cover;
-  // height: 200px;
-  // width: 200px;
+  background-color: #f8f8f8;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 168px;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 6px;
+  backdrop-filter: blur(10px);
+}
+
+#numbers {
+  size: 50px;
 }
 
 .call--button {

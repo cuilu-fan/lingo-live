@@ -38,9 +38,11 @@
 }
 
 .friend-information {
-  border-radius: 16px;
-  background-color: rgba(#fca401, 0.6);
+  border-radius: 8px;
+  background-color: rgba(#fca401, 0.8);
   margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  padding-left: 16px;
 }
 
 .friend-name {
