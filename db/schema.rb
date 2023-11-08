@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_02_110541) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
-    t.bigint "requested_by_id", null: false
+    t.bigint "requested_by_id"
     t.index ["requested_by_id"], name: "index_friends_on_requested_by_id"
     t.index ["user_1_id"], name: "index_friends_on_user_1_id"
     t.index ["user_2_id"], name: "index_friends_on_user_2_id"
