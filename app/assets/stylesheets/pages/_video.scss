@@ -90,7 +90,9 @@
 .add-friend-button {
   color: white;
   background-color: #FCA401;
-  margin-top: -390%;
+  position: absolute;
+  top: 37px;
+  left: 15px;
   font-size: 18px;
   height: 35px;
   width: 35px;
@@ -98,5 +100,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -5%;
 }

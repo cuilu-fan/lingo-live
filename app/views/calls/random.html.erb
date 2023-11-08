@@ -27,11 +27,11 @@
         </div>
       </div>
     </div>
-    <div class="next--button">
     <% request = current_user == @call.random_user ? @call.caller : @call.random_user%>
     <%= link_to create_from_call_friends_path(friend: request), data: { turbo_method: :post } do %>
       <div class="add-friend-button"><i class="fa-solid fa-user-plus"></i></div>
       <% end %>
+    <div class="next--button">
       <button type="button" class="flash-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Flashcards
       </button>
