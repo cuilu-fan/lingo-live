@@ -20,11 +20,12 @@
 }
 
 .flashcards--container {
-  margin-top: 42px;
-  background-color: #ffbd59;
+  margin-top: 24px;
+  background-color: rgba(#ffbd59, 0.9);
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   height: 180px;
+  backdrop-filter: blur(10px);
 }
 
 .title-container {
@@ -39,7 +40,7 @@
   color: white;
   font-weight: bold;
   margin-bottom: 6px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .flashcard-grid {
@@ -102,10 +103,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 48px;
-  background-color: #ffbd59;
+  margin-top: 32px;
+  background-color: rgba(#ffbd59, 0.9);
   border-radius: 8px;
-  padding-top: 8px;
+  padding-top: 12px;
+  backdrop-filter: blur(10px);
 }
 
 .home-image {
