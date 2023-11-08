@@ -64,7 +64,8 @@
 
 .friend-result-list {
   margin-top: 20px;
-  background-color:#fca401;
+  background-color: rgba(#fca401, 0.9);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   list-style: none;
   display: flex;
@@ -121,8 +122,17 @@
   margin-right: -20px;
 }
 
-.add-user i {
+.add-user {
   padding: 10px;
+  font-size: 14px;
+  color: #5b4cff;
+}
+
+.fa-plus::before {
+  border: 2px solid green;
+  border-radius: 50%;
+  background-color: green;
+  padding: 6px;
 }
 
 .not-found-text {
@@ -165,6 +175,11 @@
 }
 
 /*----- FRIENDS PENDING -----*/
+
+ol,
+ul {
+  padding-left: 0rem;
+}
 .pending-container {
   width: 100%;
   text-align: center;
@@ -173,7 +188,8 @@
 
 .pending-list {
   margin-top: 20px;
-  background-color:#fca401;
+  background-color: rgba(#fca401, 0.9);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   list-style: none;
   display: flex;
