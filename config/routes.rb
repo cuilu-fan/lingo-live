@@ -19,6 +19,9 @@ Rails.application.routes.draw do
     member do
       patch :accept
     end
+    collection do
+      post :create_from_call
+    end
   end
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
