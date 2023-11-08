@@ -21,7 +21,7 @@
 }
 
 .friends-list {
-  margin: 4rem 12px;
+  margin: 4rem 0;
 }
 
 
@@ -36,19 +36,27 @@
   background-color: rgba(#fca401, 0.8);
   margin-bottom: 1rem;
   backdrop-filter: blur(10px);
-  padding-left: 16px;
-  padding-right: 16px;
-  display: flex;
+  padding: 5px 16px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
+}
+.friend-info {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .friend-rate {
   display: flex;
   gap: 0.25rem;
   align-items: center;
+  margin-right: 0.25rem;
+  font-size: 0.75rem;
 }
 
 .friend-buttons {
