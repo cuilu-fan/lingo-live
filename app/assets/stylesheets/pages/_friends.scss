@@ -24,12 +24,6 @@
   margin: 4rem 12px;
 }
 
-.inline-layout > div {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 20px 4px;
-  width: 23%;
-}
 
 .inline-layout > div:nth-child(2) p,
 .inline-layout > div:nth-child(3) p {
@@ -43,6 +37,23 @@
   margin-bottom: 1rem;
   backdrop-filter: blur(10px);
   padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.friend-rate {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.friend-buttons {
+  display: flex;
+  gap: 0.25rem;
 }
 
 .friend-name {
