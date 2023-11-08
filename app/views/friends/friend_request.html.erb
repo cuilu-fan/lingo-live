@@ -27,8 +27,8 @@
               </div>
             </div>
             <div class="column1-search">
-            <%= link_to friends_path(friend: result ), data: {turbo_method: :post} do %>
-              <li><button class="add-user"><i class="fa-solid fa-user-plus"></i></li>
+              <%= link_to friends_path(friend: result ), data: {turbo_method: :post} do %>
+                <li><button class="add-user"><i class="fa-solid fa-user-plus"></i></li>
               <% end %>
             </div>
       <% end %>
@@ -37,24 +37,46 @@
         <p class="not-found-text">No results found.</p>
       <% end %>
     </div>
-    <div class="manage-request">
+    <div class="pending-container">
       <p><strong>Review</strong> or <strong>accept</strong> your requests:</p>
-      <div class="btn-manage-friend-container">
-        <%# <%= link_to 'Requested', '#', class: 'buttons-manage-request see-requested' %>
-        <%= link_to 'Pending', '#', class: 'buttons-manage-request see-pending' %>
-      </div>
       <% @friend_requests.each do |friend_request| %>
-
-      <% if current_user == friend_request.user_1 %>
-          <h3><%= friend_request.user_2.first_name %></h3>
-          <h3><%= friend_request.status %></h3>
-          <%= link_to "accept", accept_friend_path(friend_request), data: {turbo_method: :patch} %>
-        <% elsif current_user == friend_request.user_2 %>
-          <h3><%= friend_request.user_1.first_name %></h3>
-          <h3><%= friend_request.status %></h3>
-          <%= link_to "accept", accept_friend_path(friend_request), data: {turbo_method: :patch} %>
-        <% end %>
-   
+        <div class="pending-list">
+          <% if current_user == friend_request.user_1 %>
+            <div class="column1-search">
+              <%= image_tag("Avatar1.png", class: "avatar-search2", alt: "user avatar") %>
+            </div>
+            <div class="column2-search">
+              <div class="row-search">
+                <li><strong>Name:</strong> <%= friend_request.user_2.first_name %></li>
+              </div>
+              <div class="row-search">
+                <li><strong>Status:</strong> <%= friend_request.status %></li>
+              </div>
+            </div>
+            <div class="column1-search">
+              <%= link_to accept_friend_path(friend_request), data: {turbo_method: :patch} do %>
+                  <li><button class="add-user"><i class="fa-solid fa-check fa-lg icon-color"></i></li>
+                <% end %>
+            </div>
+            <% elsif current_user == friend_request.user_2 %>
+              <div class="column1-search">
+                <%= image_tag("Avatar1.png", class: "avatar-search2", alt: "user avatar") %>
+              </div>
+              <div class="column2-search">
+                <div class="row-search">
+                  <li>Name: <%= friend_request.user_1.first_name %></li>
+                </div>
+                <div class="row-search">
+                  <li>Status: <%= friend_request.status %></li>
+                </div>
+              </div>
+              <div class="column1-search">
+                <%= link_to accept_friend_path(friend_request), data: {turbo_method: :patch} do %>
+                  <li><button class="add-user"><i class="fa-solid fa-check fa-lg icon-color"></i></i></li>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
