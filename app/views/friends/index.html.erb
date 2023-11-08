@@ -12,11 +12,11 @@
         <div class="friend-information inline-layout" >
           <div>
             <%# <%= image_tag("avatar_boy2.png", class: "avatar", alt: "user avatar") %>
-            <i class="fa-regular fa-user fa-2xl"></i>
+            <i class="fa-regular fa-user"></i>
           </div>
 
-          <div class="friend-info">
-            <p class="friend-name"><%= other_user.first_name.capitalize %></p>
+          <div class="friend-info flex-shrink-1">
+            <%= other_user.first_name.capitalize %>
           </div>
 
           <div class="friend-rate">
@@ -34,11 +34,11 @@
             <% else %>
 
               <%= link_to chatroom_path(friend.chatroom), class: "text-button" do %>
-                <i class="fas fa-comment"></i>
+                <i class="fas fa-comment fa-sm"></i>
               <% end %>
 
             <% end %>
-              <button class="call-button"><i class="fas fa-phone"></i></button>
+              <button class="call-button"><i class="fas fa-phone fa-sm"></i></button>
           </div>
         </div>
         <% displayed_users.add(other_user.id) %>
