@@ -1,19 +1,20 @@
 <div class="call-index" data-controller="counterup">
+  <div class="text">
+    <h2> Start a chat today!</h2>
+  </div>
   <div class="practiced">
-    <p data-counterup-target="practice"></p>
+    <p data-counterup-target="practice" style="font-size:32px; color:#5b4cff"></p>
     <p>Hours of calls!</p>
     <%=render "calls/trophy_picture"%>
   </div>
 
   <div class="chatted">
-    <p data-counterup-target="call"></p>
+    <p data-counterup-target="call" style="font-size:32px; color:#5b4cff"></p>
     <p> language buddies! </p>
-    <%= image_tag "friend_chat.png", alt: "background picture", width: 200, height: 150%>
+    <%=render "calls/hands-clapping"%>
+
   </div>
 
-  <div class="text">
-    <p> Start a chat today!</p>
-  </div>
 
   <div class="call--button">
 
