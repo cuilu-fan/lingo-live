@@ -4,8 +4,10 @@
 
     <% displayed_users = Set.new %>
 
+  <% if @friends.empty? %>
+    <p> Ooops! You have no friends yet, <br> try out <%= link_to "RandoTalk", calls_path %> to make some friends😀. or <%= link_to "search for a Friend", friend_request_path%>! </p>
+  <% else %>
     <% @friends.each do |friend| %>
-
       <% other_user = friend.user_1 == current_user ? friend.user_2 : friend.user_1 %>
       <% unless displayed_users.include?(other_user.id) %>
 
@@ -44,5 +46,6 @@
         <% displayed_users.add(other_user.id) %>
       <% end %>
     <% end %>
+  <% end %>
   </div>
 </div>
