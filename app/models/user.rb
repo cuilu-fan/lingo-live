@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :messages, through: :friends
   has_many :user_flashcards
-  has_many :flashcards, through: :user_flashcards
+  has_many :translations, through: :user_flashcards
   has_many :categories, through: :user_flashcards
   has_many :friends
 

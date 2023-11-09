@@ -120,19 +120,31 @@
   justify-content: center;
   align-items: center;
   margin-right: -20px;
-}
-
-.add-user {
   padding: 10px;
   font-size: 14px;
   color: #5b4cff;
+}
+
+.add-user2 {
+  border: none;
+  background: transparent;
+  color: black;
+  font-size: 18px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -20px;
+  padding: 10px;
+  font-size: 10px;
 }
 
 .fa-plus::before {
   border: 2px solid green;
   border-radius: 50%;
   background-color: green;
-  padding: 6px;
+  padding: 4px;
 }
 
 .not-found-text {
