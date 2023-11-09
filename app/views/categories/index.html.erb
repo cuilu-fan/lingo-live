@@ -1,13 +1,17 @@
 <div class="categories--container">
+  <% if @categories.empty? %>
+    <p>No words to learn yet? Let's start from creating some flashcards! 📚</p>
+  <% else %>
     <% @categories.each do |category| %>
-  <div class="category">
-    <div><%=link_to category.name, category_path(category), class:"category-title" %></div>
-    <div class="card-count"><%= category.user_flashcards.count %></div>
-  </div>
+      <%=link_to category_path(category), class: "category" do%>
+        <div class="category-title"><%= category.name %></div>
+        <div class="card-count"><%= category.user_flashcards.count %></div>
+      <% end %>
     <% end %>
-<%=link_to new_user_flashcard_path, class:"add--button--container" do%>
-  <div class="add">
-      <i class="fa-solid fa-circle-plus fa-2xl add-button" style="color: white;"></i>
-  </div>
-<% end%>
+  <% end %>
+  <%=link_to new_user_flashcard_path, class:"add--button--container" do%>
+    <div class="add">
+        <i class="fa-solid fa-circle-plus fa-2xl add-button" style="color: white;"></i>
+    </div>
+  <% end%>
 </div>
