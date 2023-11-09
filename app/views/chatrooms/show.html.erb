@@ -5,9 +5,7 @@
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender_id == current_user.id ? 'justify-content-end' : 'justify-content-start' %>">
         <div class="<%= message.sender_id == current_user.id ? 'sender-style triangle right-top' : 'receiver-style triangle left-top' %>">
-          <div class="message-content">
             <%= render "messages/message", message: message %>
-          </div>
         </div>
       </div>
     <% end %>
